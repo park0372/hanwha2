@@ -99,41 +99,33 @@ const ctx=document.getElementById("surveyChart");
 
 new Chart(ctx,{
 
-type:"doughnut",
+type: "doughnut",
 
-data:{
+    data: {
+        labels: [
+            "Approved",
+            "Review",
+            "Pending",
+            "Survey"
+        ],
 
-labels:[
-"Approved",
-"Review",
-"Pending",
-"Survey"
-],
+        datasets: [{
+            data: [695,132,74,344],
+            borderWidth: 0
+        }]
+    },
 
-datasets:[{
+    options: {
+        responsive: true,
 
-data:[695,132,74,344],
+        maintainAspectRatio: false,
 
-borderWidth:0
-
-}]
-
-},
-
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-position:"bottom"
-}
-
-}
-
-}
-
+        plugins: {
+            legend: {
+                position: "bottom"
+            }
+        }
+    }
 });
 
 

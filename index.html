@@ -307,16 +307,39 @@ MEP
 
     <div class="panel">
 
-        <div class="table-header">
+      <div class="table-header">
 
-            <h3>Vendor Database</h3>
+    <h3>Vendor Database</h3>
 
-            <input
-                type="text"
-                id="companySearch"
-                placeholder="Search Vendor...">
+    <div class="toolbar">
 
-        </div>
+        <button id="addVendorBtn" class="primary-btn">
+            + Add Vendor
+        </button>
+
+        <select id="filterCategory">
+            <option value="">All Category</option>
+            <option>Civil</option>
+            <option>Electrical</option>
+            <option>Mechanical</option>
+            <option>Material</option>
+        </select>
+
+        <select id="filterStatus">
+            <option value="">All Status</option>
+            <option>Approved</option>
+            <option>Pending</option>
+            <option>Review</option>
+        </select>
+
+        <input
+            type="text"
+            id="companySearch"
+            placeholder="Search Vendor...">
+
+    </div>
+
+</div>
 
         <table id="companyTable">
 

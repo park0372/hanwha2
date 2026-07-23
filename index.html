@@ -1,1 +1,239 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>IVIP</title><link rel='stylesheet' href='css/style.css'></head><body><aside><h2>IVIP</h2><ul><li>Dashboard</li><li>Companies</li><li>Survey</li></ul></aside><main><h1>Iraq Vendor Intelligence Platform</h1><p>V1 Starter</p><script src='js/script.js'></script></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IVIP | Iraq Vendor Intelligence Platform</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+
+<h2>IVIP</h2>
+
+<p>Iraq Vendor Intelligence Platform</p>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li class="active">
+
+🏠 Dashboard
+
+</li>
+
+<li>
+
+🏢 Companies
+
+</li>
+
+<li>
+
+📝 Survey
+
+</li>
+
+<li>
+
+📂 Documents
+
+</li>
+
+<li>
+
+📰 News
+
+</li>
+
+<li>
+
+📊 Reports
+
+</li>
+
+<li>
+
+⚙ Settings
+
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
+<div class="content">
+
+<header>
+
+<div class="title">
+
+<h1>Dashboard</h1>
+
+<p>Vendor Intelligence Portal</p>
+
+</div>
+
+<div class="top-menu">
+
+<input
+type="text"
+placeholder="Search Company..."
+id="searchBox">
+
+<div class="profile">
+
+👤 Park
+
+</div>
+
+</div>
+
+</header>
+
+<section class="kpi">
+
+<div class="card blue">
+
+<h4>Total Companies</h4>
+
+<h2>1,245</h2>
+
+<span>+15 this week</span>
+
+</div>
+
+<div class="card green">
+
+<h4>Survey Completed</h4>
+
+<h2>842</h2>
+
+<span>67%</span>
+
+</div>
+
+<div class="card orange">
+
+<h4>Pending</h4>
+
+<h2>132</h2>
+
+<span>Waiting Review</span>
+
+</div>
+
+<div class="card purple">
+
+<h4>Approved Vendors</h4>
+
+<h2>695</h2>
+
+<span>Ready for Tender</span>
+
+</div>
+
+</section>
+
+<section class="dashboard">
+
+<div class="left-panel">
+
+<div class="panel">
+
+<h3>Survey Progress</h3>
+
+<canvas id="surveyChart"></canvas>
+
+</div>
+
+<div class="panel">
+
+<h3>Recent Companies</h3>
+
+<div id="recentCompanies">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="right-panel">
+
+<div class="panel">
+
+<h3>Latest Iraq Construction News</h3>
+
+<ul id="newsList">
+
+</ul>
+
+</div>
+
+<div class="panel">
+
+<h3>Quick Statistics</h3>
+
+<div class="stats">
+
+<div>
+
+Civil
+
+<strong>312</strong>
+
+</div>
+
+<div>
+
+Electrical
+
+<strong>145</strong>
+
+</div>
+
+<div>
+
+Mechanical
+
+<strong>188</strong>
+
+</div>
+
+<div>
+
+MEP
+
+<strong>204</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>

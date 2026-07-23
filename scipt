@@ -109,24 +109,28 @@ type: "doughnut",
             "Survey"
         ],
 
-        datasets: [{
-            data: [695,132,74,344],
-            borderWidth: 0
-        }]
+       datasets: [{
+    data: [695,132,74,344],
+    borderWidth: 0,
+
+    radius: "75%",
+    cutout: "60%"
+}],
+
+    options:{
+    responsive:true,
+    maintainAspectRatio:false,
+
+    layout:{
+        padding:20
     },
 
-    options: {
-        responsive: true,
-
-        maintainAspectRatio: false,
-
-        plugins: {
-            legend: {
-                position: "bottom"
-            }
+    plugins:{
+        legend:{
+            position:"bottom"
         }
     }
-});
+}
 
 
 /* ===========================

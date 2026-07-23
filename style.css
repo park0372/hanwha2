@@ -382,6 +382,18 @@ KPI CARDS
 
     height:340px;
 
+    overflow:hidden;
+
+}
+
+.chart-box canvas{
+
+    display:block;
+
+    width:100% !important;
+
+    height:100% !important;
+
 }
 
 #surveyChart{

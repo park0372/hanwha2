@@ -176,3 +176,127 @@ console.log("Searching :",topSearch.value);
 
 
 console.log("IVIP V1.1 Loaded Successfully");
+
+/* ===========================
+   Vendor Intelligence Update
+=========================== */
+
+
+// KPI 계산
+
+function updateVendorKPI(){
+
+
+const total =
+document.getElementById("totalVendor");
+
+
+const approved =
+document.getElementById("approvedVendor");
+
+
+const review =
+document.getElementById("reviewVendor");
+
+
+const pending =
+document.getElementById("pendingVendor");
+
+
+
+const approvedCount =
+companies.filter(
+c=>c.status==="Approved"
+).length;
+
+
+const reviewCount =
+companies.filter(
+c=>c.status==="Review"
+).length;
+
+
+const pendingCount =
+companies.filter(
+c=>c.status==="Pending"
+).length;
+
+
+
+if(total)
+total.innerText=companies.length;
+
+
+if(approved)
+approved.innerText=approvedCount;
+
+
+if(review)
+review.innerText=reviewCount;
+
+
+if(pending)
+pending.innerText=pendingCount;
+
+
+}
+
+
+
+updateVendorKPI();
+
+
+
+
+
+// ===========================
+// Vendor Table 생성
+// ===========================
+
+
+function createVendorTable(){
+
+
+const tbody =
+document.querySelector(
+"#vendorTable tbody"
+);
+
+
+if(!tbody)
+return;
+
+
+tbody.innerHTML="";
+
+
+
+companies.forEach(c=>{
+
+
+const row=document.createElement("tr");
+
+
+row.innerHTML=`
+
+<td>${c.company}</td>
+<td>${c.category}</td>
+<td>${c.city}</td>
+<td>${c.score}</td>
+<td>${c.status}</td>
+
+`;
+
+
+tbody.appendChild(row);
+
+
+
+});
+
+
+}
+
+
+
+createVendorTable();

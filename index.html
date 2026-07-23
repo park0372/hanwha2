@@ -19,7 +19,11 @@
 
 </head>
 
+
 <body>
+
+
+<!-- Sidebar -->
 
 <div class="sidebar">
 
@@ -31,50 +35,37 @@
 
 </div>
 
+
 <nav>
 
 <ul>
 
 <li class="active">
-
 🏠 Dashboard
-
 </li>
 
 <li>
-
 🏢 Companies
-
 </li>
 
 <li>
-
 📝 Survey
-
 </li>
 
 <li>
-
 📂 Documents
-
 </li>
 
 <li>
-
 📰 News
-
 </li>
 
 <li>
-
 📊 Reports
-
 </li>
 
 <li>
-
 ⚙ Settings
-
 </li>
 
 </ul>
@@ -83,9 +74,15 @@
 
 </div>
 
+
+
+<!-- Main Content -->
+
 <div class="content">
 
+
 <header>
+
 
 <div class="title">
 
@@ -95,12 +92,16 @@
 
 </div>
 
+
+
 <div class="top-menu">
+
 
 <input
 type="text"
 placeholder="Search Company..."
 id="searchBox">
+
 
 <div class="profile">
 
@@ -108,95 +109,148 @@ id="searchBox">
 
 </div>
 
+
 </div>
+
 
 </header>
 
+
+
+
+<!-- KPI Section -->
+
+
 <section class="kpi">
+
 
 <div class="card blue">
 
-<h4>Total Companies</h4>
+<h4>Total Vendors</h4>
 
-<h2>1,245</h2>
+<h2 id="totalVendor">0</h2>
 
-<span>+15 this week</span>
+<span>Registered Companies</span>
 
 </div>
+
+
 
 <div class="card green">
 
 <h4>Survey Completed</h4>
 
-<h2>842</h2>
+<h2 id="reviewVendor">0</h2>
 
-<span>67%</span>
+<span>Under Evaluation</span>
 
 </div>
+
+
 
 <div class="card orange">
 
 <h4>Pending</h4>
 
-<h2>132</h2>
+<h2 id="pendingVendor">0</h2>
 
 <span>Waiting Review</span>
 
 </div>
 
+
+
 <div class="card purple">
 
 <h4>Approved Vendors</h4>
 
-<h2>695</h2>
+<h2 id="approvedVendor">0</h2>
 
 <span>Ready for Tender</span>
 
 </div>
 
+
 </section>
+
+
+
+
+
+<!-- Dashboard Area -->
+
 
 <section class="dashboard">
 
+
 <div class="left-panel">
 
+
 <div class="panel">
+
 
 <h3>Survey Progress</h3>
 
+
 <canvas id="surveyChart"></canvas>
+
 
 </div>
 
+
+
+
+
 <div class="panel">
+
 
 <h3>Recent Companies</h3>
 
+
 <div id="recentCompanies">
 
-</div>
 
 </div>
 
+
 </div>
+
+
+
+</div>
+
+
+
+
 
 <div class="right-panel">
 
+
 <div class="panel">
+
 
 <h3>Latest Iraq Construction News</h3>
 
+
 <ul id="newsList">
+
 
 </ul>
 
+
 </div>
+
+
+
 
 <div class="panel">
 
+
 <h3>Quick Statistics</h3>
 
+
 <div class="stats">
+
 
 <div>
 
@@ -206,6 +260,8 @@ Civil
 
 </div>
 
+
+
 <div>
 
 Electrical
@@ -213,6 +269,8 @@ Electrical
 <strong>145</strong>
 
 </div>
+
+
 
 <div>
 
@@ -222,6 +280,8 @@ Mechanical
 
 </div>
 
+
+
 <div>
 
 MEP
@@ -230,26 +290,31 @@ MEP
 
 </div>
 
-</div>
 
 </div>
 
+
 </div>
+
+
+
+</div>
+
 
 </section>
 
-<section class="company-section">
+    <section class="company-section">
 
     <div class="panel">
 
         <div class="table-header">
 
-            <h3>Company Database</h3>
+            <h3>Vendor Database</h3>
 
             <input
                 type="text"
                 id="companySearch"
-                placeholder="Search Company...">
+                placeholder="Search Vendor...">
 
         </div>
 
@@ -275,71 +340,7 @@ MEP
 
             </thead>
 
-            <tbody>
-
-                <tr>
-
-                    <td>Al Rashid Construction</td>
-
-                    <td>Civil</td>
-
-                    <td>Baghdad</td>
-
-                    <td><span class="status approved">Approved</span></td>
-
-                    <td>92</td>
-
-                    <td>2026-07-23</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Iraq MEP</td>
-
-                    <td>Mechanical</td>
-
-                    <td>Basra</td>
-
-                    <td><span class="status review">Review</span></td>
-
-                    <td>88</td>
-
-                    <td>2026-07-22</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Baghdad Electric</td>
-
-                    <td>Electrical</td>
-
-                    <td>Baghdad</td>
-
-                    <td><span class="status survey">Survey</span></td>
-
-                    <td>81</td>
-
-                    <td>2026-07-21</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Modern Steel Co.</td>
-
-                    <td>Steel</td>
-
-                    <td>Karbala</td>
-
-                    <td><span class="status pending">Pending</span></td>
-
-                    <td>74</td>
-
-                    <td>2026-07-20</td>
-
-                </tr>
+            <tbody id="vendorTable">
 
             </tbody>
 
@@ -348,6 +349,8 @@ MEP
     </div>
 
 </section>
+
+
 
 <footer>
 
@@ -361,7 +364,9 @@ MEP
 
 </footer>
 
+
 </div>
+
 
 <script src="vendor-manager.js"></script>
 <script src="script.js"></script>

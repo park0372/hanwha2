@@ -95,7 +95,9 @@ newsList.appendChild(li);
    Survey Progress Chart
 =========================== */
 
-const ctx=document.getElementById("surveyChart");
+const ctx = document
+    .getElementById("surveyChart")
+    .getContext("2d");
 
 new Chart(ctx,{
 

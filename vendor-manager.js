@@ -213,7 +213,7 @@ document.addEventListener(
     "DOMContentLoaded",
     function(){
 
-        renderVendorTable(vendors);
+        
 
     }
 );
@@ -301,7 +301,10 @@ if(editIndex >= 0){
 }
 
 renderVendorTable(vendors);
-    updateVendorKPI();
+updateVendorKPI();
+
+// LocalStorage 저장
+localStorage.setItem("vendors", JSON.stringify(vendors));
 
     document.getElementById("vendorCompany").value="";
     document.getElementById("vendorCategory").value="";
@@ -320,9 +323,12 @@ function deleteVendor(index){
         return;
     }
 
-    vendors.splice(index,1);
+vendors.splice(index,1);
 
-    renderVendorTable(vendors);
+renderVendorTable(vendors);
+
+// LocalStorage 저장
+localStorage.setItem("vendors", JSON.stringify(vendors));
 
 }
 function editVendor(index){

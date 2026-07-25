@@ -306,7 +306,7 @@ updateVendorKPI();
 // LocalStorage 저장
     console.log("Before Save", vendors);
 localStorage.setItem("vendors", JSON.stringify(vendors));
-
+alert("LocalStorage Saved!");
     document.getElementById("vendorCompany").value="";
     document.getElementById("vendorCategory").value="";
     document.getElementById("vendorCity").value="";

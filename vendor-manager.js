@@ -1,3 +1,4 @@
+console.log("vendor-manager.js Loaded");
 // ============================================
 // Iraq Vendor Intelligence Platform
 // Vendor Management Engine V1

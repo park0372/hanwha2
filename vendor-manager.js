@@ -164,31 +164,33 @@ function renderVendorTable(data){
 
     tbody.innerHTML = "";
 
-    data.forEach(v=>{
+    data.forEach((v,index)=>{
 
-        const row = document.createElement("tr");
+    const row=document.createElement("tr");
 
-row.innerHTML = `
-<td>${c.company}</td>
-<td>${c.category}</td>
-<td>${c.city}</td>
-<td>${c.score}</td>
-<td>${c.status}</td>
+    row.innerHTML=`
+        <td>${v.name}</td>
+        <td>${v.category}</td>
+        <td>${v.location}</td>
+        <td>${v.score}</td>
+        <td>${v.approval}</td>
 
-<td>
-    <button class="edit-btn" onclick="editVendor(${index})">
-        Edit
-    </button>
+        <td>
+            <button class="edit-btn"
+                onclick="editVendor(${index})">
+                Edit
+            </button>
 
-    <button class="delete-btn" onclick="deleteVendor(${index})">
-        Delete
-    </button>
-</td>
-`;
+            <button class="delete-btn"
+                onclick="deleteVendor(${index})">
+                Delete
+            </button>
+        </td>
+    `;
 
-        tbody.appendChild(row);
+    tbody.appendChild(row);
 
-    });
+});
 
     // KPI 자동 갱신
     if(typeof updateVendorKPI==="function"){

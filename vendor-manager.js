@@ -262,8 +262,32 @@ window.addEventListener("click", (e) => {
 
 saveVendor.addEventListener("click", () => {
 
-    alert("Next Step : Vendor Save Function");
+    const company = document.getElementById("vendorCompany").value.trim();
+    const category = document.getElementById("vendorCategory").value.trim();
+    const city = document.getElementById("vendorCity").value.trim();
+    const score = Number(document.getElementById("vendorScore").value);
+    const status = document.getElementById("vendorStatus").value;
 
-    modal.style.display = "none";
+    if(company===""){
+        alert("Company Name is required.");
+        return;
+    }
 
+    companies.push({
+        company,
+        category,
+        city,
+        score,
+        status
+    });
+
+    createVendorTable();
+    updateVendorKPI();
+
+    document.getElementById("vendorCompany").value="";
+    document.getElementById("vendorCategory").value="";
+    document.getElementById("vendorCity").value="";
+    document.getElementById("vendorScore").value="";
+
+    modal.style.display="none";
 });

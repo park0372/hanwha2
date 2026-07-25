@@ -183,79 +183,25 @@ console.log("IVIP V1.1 Loaded Successfully");
 // KPI 계산
 function updateVendorKPI(){
 
-    // companies가 있으면 companies 사용, 없으면 vendors 사용
-    const data =
-        (typeof companies !== "undefined")
-            ? companies
-            : vendors;
+    if(typeof vendors === "undefined") return;
 
     document.getElementById("totalVendor").innerText =
-        data.length;
+        vendors.length;
 
     document.getElementById("approvedVendor").innerText =
-        data.filter(v => (v.status || v.approval) === "Approved").length;
+        vendors.filter(v=>v.approval==="Approved").length;
 
     document.getElementById("reviewVendor").innerText =
-        data.filter(v => (v.status || v.approval) === "Review").length;
+        vendors.filter(v=>v.approval==="Review").length;
 
     document.getElementById("pendingVendor").innerText =
-        data.filter(v => (v.status || v.approval) === "Pending").length;
+        vendors.filter(v=>v.approval==="Pending").length;
 
 }
-
 updateVendorKPI();
 
 
 
 
 
-// ===========================
-// Vendor Table 생성
-// ===========================
 
-
-function createVendorTable(){
-
-
-const tbody =
-document.querySelector(
-"#vendorTable tbody"
-);
-
-
-if(!tbody)
-return;
-
-
-tbody.innerHTML="";
-
-
-
-companies.forEach(c=>{
-
-
-const row=document.createElement("tr");
-
-
-row.innerHTML = `
-<td>${c.company}</td>
-<td>${c.category}</td>
-<td>${c.city}</td>
-<td>${c.status}</td>
-<td>${c.score}</td>
-<td>${new Date().toLocaleDateString()}</td>
-`;
-
-
-tbody.appendChild(row);
-
-
-
-});
-
-
-}
-
-
-
-createVendorTable();

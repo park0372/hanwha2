@@ -301,3 +301,15 @@ function deleteVendor(index){
     renderVendorTable(vendors);
 
 }
+function editVendor(index){
+
+    const v = vendors[index];
+
+    document.getElementById("vendorCompany").value = v.name;
+    document.getElementById("vendorCategory").value = v.category;
+    document.getElementById("vendorCity").value = v.location;
+    document.getElementById("vendorScore").value = v.score;
+    document.getElementById("vendorStatus").value = v.approval;
+
+    modal.style.display = "flex";
+}

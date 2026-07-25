@@ -132,6 +132,7 @@ type: "doughnut",
             position:"bottom"
         }
     }
+    }        
 });
 
 

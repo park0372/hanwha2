@@ -156,51 +156,36 @@ function vendorKPI() {
 // Render Vendor Table
 // ============================================
 
-function renderVendorTable(data) {
+function renderVendorTable(data){
 
+    const tbody = document.getElementById("vendorTable");
 
-    const table =
-        document.getElementById(
-            "vendorTable"
-        );
+    if(!tbody) return;
 
+    tbody.innerHTML = "";
 
-    if(!table) {
-        return;
-    }
+    data.forEach(v=>{
 
+        const row = document.createElement("tr");
 
-    table.innerHTML = "";
-
-
-    data.forEach(v => {
-
-
-        table.innerHTML += `
-
-        <tr>
-
+        row.innerHTML = `
             <td>${v.id}</td>
-
             <td>${v.name}</td>
-
             <td>${v.category}</td>
-
             <td>${v.location}</td>
-
             <td>${v.approval}</td>
-
-            <td>${v.risk}</td>
-
             <td>${v.score}</td>
-
-        </tr>
-
+            <td>${new Date().toLocaleDateString()}</td>
         `;
 
+        tbody.appendChild(row);
 
     });
 
+    // KPI 자동 갱신
+    if(typeof updateVendorKPI==="function"){
+        updateVendorKPI();
+    }
 
 }
 

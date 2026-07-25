@@ -275,14 +275,13 @@ companies.forEach(c=>{
 const row=document.createElement("tr");
 
 
-row.innerHTML=`
-
+row.innerHTML = `
 <td>${c.company}</td>
 <td>${c.category}</td>
 <td>${c.city}</td>
-<td>${c.score}</td>
 <td>${c.status}</td>
-
+<td>${c.score}</td>
+<td>${new Date().toLocaleDateString()}</td>
 `;
 
 

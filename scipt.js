@@ -181,65 +181,27 @@ console.log("IVIP V1.1 Loaded Successfully");
 
 
 // KPI 계산
-
 function updateVendorKPI(){
 
+    // companies가 있으면 companies 사용, 없으면 vendors 사용
+    const data =
+        (typeof companies !== "undefined")
+            ? companies
+            : vendors;
 
-const total =
-document.getElementById("totalVendor");
+    document.getElementById("totalVendor").innerText =
+        data.length;
 
+    document.getElementById("approvedVendor").innerText =
+        data.filter(v => (v.status || v.approval) === "Approved").length;
 
-const approved =
-document.getElementById("approvedVendor");
+    document.getElementById("reviewVendor").innerText =
+        data.filter(v => (v.status || v.approval) === "Review").length;
 
-
-const review =
-document.getElementById("reviewVendor");
-
-
-const pending =
-document.getElementById("pendingVendor");
-
-
-
-const approvedCount =
-companies.filter(
-c=>c.status==="Approved"
-).length;
-
-
-const reviewCount =
-companies.filter(
-c=>c.status==="Review"
-).length;
-
-
-const pendingCount =
-companies.filter(
-c=>c.status==="Pending"
-).length;
-
-
-
-if(total)
-total.innerText=companies.length;
-
-
-if(approved)
-approved.innerText=approvedCount;
-
-
-if(review)
-review.innerText=reviewCount;
-
-
-if(pending)
-pending.innerText=pendingCount;
-
+    document.getElementById("pendingVendor").innerText =
+        data.filter(v => (v.status || v.approval) === "Pending").length;
 
 }
-
-
 
 updateVendorKPI();
 

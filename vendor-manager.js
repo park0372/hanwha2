@@ -6,7 +6,11 @@
 
 
 // Vendor Database
-let vendors = [
+const savedVendors = localStorage.getItem("vendors");
+
+let vendors = savedVendors
+    ? JSON.parse(savedVendors)
+    : [
 
     {
         id: "V001",

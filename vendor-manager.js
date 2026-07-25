@@ -286,3 +286,18 @@ saveVendor.addEventListener("click", () => {
 
     modal.style.display="none";
 });
+// ============================================
+// Delete Vendor
+// ============================================
+
+function deleteVendor(index){
+
+    if(!confirm("Delete this vendor?")){
+        return;
+    }
+
+    vendors.splice(index,1);
+
+    renderVendorTable(vendors);
+
+}

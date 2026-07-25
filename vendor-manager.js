@@ -270,28 +270,33 @@ if(company===""){
 
 if(editIndex >= 0){
 
-    companies[editIndex] = {
-        company,
-        category,
-        city,
-        score,
-        status
+    vendors[editIndex] = {
+        id: vendors[editIndex].id,
+        name: company,
+        category: category,
+        location: city,
+        approval: status,
+        risk: "Low",
+        score: score
     };
 
     editIndex = -1;
 
 }else{
 
-    companies.push({
-        company,
-        category,
-        city,
-        score,
-        status
+    vendors.push({
+        id: "V" + String(vendors.length + 1).padStart(3,"0"),
+        name: company,
+        category: category,
+        location: city,
+        approval: status,
+        risk: "Low",
+        score: score
     });
+
 }
 
-    createVendorTable();
+renderVendorTable(vendors);
     updateVendorKPI();
 
     document.getElementById("vendorCompany").value="";
@@ -325,7 +330,7 @@ function editVendor(index){
     document.getElementById("vendorCity").value = v.location;
     document.getElementById("vendorScore").value = v.score;
     document.getElementById("vendorStatus").value = v.approval;
-
+editIndex = index;
     modal.style.display = "flex";
 }
 

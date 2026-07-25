@@ -304,6 +304,7 @@ renderVendorTable(vendors);
 updateVendorKPI();
 
 // LocalStorage 저장
+    console.log("Before Save", vendors);
 localStorage.setItem("vendors", JSON.stringify(vendors));
 
     document.getElementById("vendorCompany").value="";

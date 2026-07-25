@@ -328,6 +328,4 @@ function editVendor(index){
 
     modal.style.display = "flex";
 }
-editIndex = index;
 
-modal.style.display = "flex";

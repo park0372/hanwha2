@@ -289,6 +289,7 @@ if(editIndex >= 0){
         score,
         status
     });
+}
 
     createVendorTable();
     updateVendorKPI();

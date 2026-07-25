@@ -117,8 +117,8 @@ type: "doughnut",
 
     radius: "75%",
     cutout: "60%"
-}],
-
+}]
+},
     options:{
     responsive:true,
     maintainAspectRatio:false,

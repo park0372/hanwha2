@@ -216,7 +216,7 @@ document.addEventListener(
 /* ==========================================
    Vendor Modal
 ========================================== */
-
+let editIndex = -1;
 const modal = document.getElementById("vendorModal");
 
 const addVendorBtn = document.getElementById("addVendorBtn");
@@ -263,10 +263,24 @@ saveVendor.addEventListener("click", () => {
     const score = Number(document.getElementById("vendorScore").value);
     const status = document.getElementById("vendorStatus").value;
 
-    if(company===""){
-        alert("Company Name is required.");
-        return;
-    }
+if(company===""){
+    alert("Company Name is required.");
+    return;
+}
+
+if(editIndex >= 0){
+
+    companies[editIndex] = {
+        company,
+        category,
+        city,
+        score,
+        status
+    };
+
+    editIndex = -1;
+
+}else{
 
     companies.push({
         company,
@@ -313,3 +327,6 @@ function editVendor(index){
 
     modal.style.display = "flex";
 }
+editIndex = index;
+
+modal.style.display = "flex";

@@ -168,15 +168,23 @@ function renderVendorTable(data){
 
         const row = document.createElement("tr");
 
-        row.innerHTML = `
-            <td>${v.id}</td>
-            <td>${v.name}</td>
-            <td>${v.category}</td>
-            <td>${v.location}</td>
-            <td>${v.approval}</td>
-            <td>${v.score}</td>
-            <td>${new Date().toLocaleDateString()}</td>
-        `;
+row.innerHTML = `
+<td>${c.company}</td>
+<td>${c.category}</td>
+<td>${c.city}</td>
+<td>${c.score}</td>
+<td>${c.status}</td>
+
+<td>
+    <button class="edit-btn" onclick="editVendor(${index})">
+        Edit
+    </button>
+
+    <button class="delete-btn" onclick="deleteVendor(${index})">
+        Delete
+    </button>
+</td>
+`;
 
         tbody.appendChild(row);
 

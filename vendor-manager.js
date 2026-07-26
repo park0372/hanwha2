@@ -199,6 +199,7 @@ function renderVendorTable(data){
         <td>${v.name}</td>
         <td>${v.category}</td>
         <td>${v.location}</td>
+        <td>${v.approval}</td>
         <td>${v.score}</td>
         <td>${v.lastUpdate || "-"}</td>
 

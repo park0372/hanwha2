@@ -20,7 +20,7 @@ let vendors = savedVendors
         location: "Baghdad",
         approval: "Approved",
         risk: "Low",
-        score: 90
+        score: 90,
         lastUpdate: "2026-07-26"
     },
 
@@ -32,7 +32,7 @@ let vendors = savedVendors
         location: "Basra",
         approval: "Pending",
         risk: "Medium",
-        score: 72
+        score: 72,
         lastUpdate: "2026-07-26"
     },
 
@@ -44,7 +44,7 @@ let vendors = savedVendors
         location: "Najaf",
         approval: "Approved",
         risk: "High",
-        score: 55
+        score: 55,
         lastUpdate: "2026-07-26"
     }
 

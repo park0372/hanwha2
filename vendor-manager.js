@@ -373,4 +373,29 @@ function editVendor(index){
 editIndex = index;
     modal.style.display = "flex";
 }
+// ============================================
+// Category / Status Filter
+// ============================================
 
+const categoryFilter = document.getElementById("filterCategory");
+const statusFilter = document.getElementById("filterStatus");
+
+function applyFilters() {
+
+    let filtered = [...vendors];
+
+    // Category Filter
+    if (categoryFilter.value !== "") {
+        filtered = filtered.filter(v => v.category === categoryFilter.value);
+    }
+
+    // Status Filter
+    if (statusFilter.value !== "") {
+        filtered = filtered.filter(v => v.approval === statusFilter.value);
+    }
+
+    renderVendorTable(filtered);
+}
+
+categoryFilter.addEventListener("change", applyFilters);
+statusFilter.addEventListener("change", applyFilters);

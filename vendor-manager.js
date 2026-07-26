@@ -21,6 +21,7 @@ let vendors = savedVendors
         approval: "Approved",
         risk: "Low",
         score: 90
+        lastUpdate: "2026-07-26"
     },
 
 
@@ -32,6 +33,7 @@ let vendors = savedVendors
         approval: "Pending",
         risk: "Medium",
         score: 72
+        lastUpdate: "2026-07-26"
     },
 
 
@@ -43,6 +45,7 @@ let vendors = savedVendors
         approval: "Approved",
         risk: "High",
         score: 55
+        lastUpdate: "2026-07-26"
     }
 
 ];
@@ -197,7 +200,7 @@ function renderVendorTable(data){
         <td>${v.category}</td>
         <td>${v.location}</td>
         <td>${v.score}</td>
-        <td>${v.approval}</td>
+        <td>${v.lastUpdate || "-"}</td>
 
 <td>
 <button class="edit-btn"
@@ -305,6 +308,7 @@ if(editIndex >= 0){
         approval: status,
         risk: "Low",
         score: score
+        lastUpdate: new Date().toLocaleDateString("ko-KR")
     };
 
     editIndex = -1;
@@ -319,6 +323,7 @@ if(editIndex >= 0){
         approval: status,
         risk: "Low",
         score: score
+        lastUpdate: new Date().toLocaleDateString("ko-KR")
     });
 
 }

@@ -180,19 +180,19 @@ function renderVendorTable(data){
         <td>${v.score}</td>
         <td>${v.approval}</td>
 
-        <td>
-            <button class="edit-btn"
-                onclick="editVendor(${index})">
-                Edit
-            </button>
+<td>
+<button class="edit-btn"
+onclick="editVendor(${index})">
+✏ Edit
+</button>
 
-            <button class="delete-btn"
-                onclick="deleteVendor(${index})">
-                Delete
-            </button>
-        </td>
-    `;
+<button class="delete-btn"
+onclick="deleteVendor(${index})">
+🗑 Delete
+</button>
 
+</td>
+`;
     tbody.appendChild(row);
 
 });
@@ -210,14 +210,17 @@ function renderVendorTable(data){
 // Initial Load
 // ============================================
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-        
+    // Vendor 목록 표시
+    renderVendorTable(vendors);
 
+    // KPI 갱신 (script.js에 함수가 있으면 실행)
+    if (typeof updateVendorKPI === "function") {
+        updateVendorKPI();
     }
-);
+
+});
 /* ==========================================
    Vendor Modal
 ========================================== */

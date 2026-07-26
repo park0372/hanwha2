@@ -307,7 +307,7 @@ if(editIndex >= 0){
         location: city,
         approval: status,
         risk: "Low",
-        score: score
+        score: score,
         lastUpdate: new Date().toLocaleDateString("ko-KR")
     };
 
@@ -322,7 +322,7 @@ if(editIndex >= 0){
         location: city,
         approval: status,
         risk: "Low",
-        score: score
+        score: score,
         lastUpdate: new Date().toLocaleDateString("ko-KR")
     });
 

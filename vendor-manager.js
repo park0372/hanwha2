@@ -50,16 +50,35 @@ let vendors = savedVendors
 
 
 // ============================================
-// Vendor Search
+// Search Vendor
 // ============================================
 
-function searchVendor(keyword) {
+const companySearch = document.getElementById("companySearch");
 
-    return vendors.filter(v =>
-        v.name
-        .toLowerCase()
-        .includes(keyword.toLowerCase())
-    );
+if (companySearch) {
+
+    companySearch.addEventListener("input", function (e) {
+
+        const keyword = e.target.value.trim().toLowerCase();
+
+        if (keyword === "") {
+            renderVendorTable(vendors);
+            return;
+        }
+
+        const filtered = vendors.filter(v =>
+
+            v.name.toLowerCase().includes(keyword) ||
+
+            v.category.toLowerCase().includes(keyword) ||
+
+            v.location.toLowerCase().includes(keyword)
+
+        );
+
+        renderVendorTable(filtered);
+
+    });
 
 }
 

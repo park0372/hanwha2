@@ -333,6 +333,11 @@ if(editIndex >= 0){
         approval: status,
         risk: "Low",
         score: score,
+            documents: vendors[editIndex].documents || {
+        companyProfile: "",
+        isoCertificate: "",
+        companyRegistration: ""
+    },
         lastUpdate: new Date().toLocaleDateString("ko-KR")
     };
 
@@ -340,17 +345,25 @@ if(editIndex >= 0){
 
 }else{
 
-    vendors.push({
-        id: "V" + String(vendors.length + 1).padStart(3,"0"),
-        name: company,
-        category: category,
-        location: city,
-        contact: contact,
-        approval: status,
-        risk: "Low",
-        score: score,
-        lastUpdate: new Date().toLocaleDateString("ko-KR")
-    });
+vendors.push({
+    id: "V" + String(vendors.length + 1).padStart(3, "0"),
+    name: company,
+    category: category,
+    location: city,
+    contact: contact,
+
+    approval: status,
+    risk: "Low",
+    score: score,
+
+    documents: {
+        companyProfile: "",
+        isoCertificate: "",
+        companyRegistration: ""
+    },
+
+    lastUpdate: new Date().toLocaleDateString("ko-KR")
+});
 
 }
 

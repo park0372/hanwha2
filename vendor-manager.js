@@ -303,6 +303,7 @@ saveVendor.addEventListener("click", () => {
     const city = document.getElementById("vendorCity").value.trim();
     const score = Number(document.getElementById("vendorScore").value);
     const status = document.getElementById("vendorStatus").value;
+    const contact = document.getElementById("vendorContact").value.trim();
 
 if(company===""){
     alert("Company Name is required.");
@@ -331,6 +332,7 @@ if(editIndex >= 0){
         name: company,
         category: category,
         location: city,
+        contact: contact,
         approval: status,
         risk: "Low",
         score: score,
@@ -378,6 +380,7 @@ function editVendor(index){
     document.getElementById("vendorCompany").value = v.name;
     document.getElementById("vendorCategory").value = v.category;
     document.getElementById("vendorCity").value = v.location;
+    document.getElementById("vendorContact").value = v.contact || "";
     document.getElementById("vendorScore").value = v.score;
     document.getElementById("vendorStatus").value = v.approval;
 editIndex = index;

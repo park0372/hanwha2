@@ -493,31 +493,29 @@ function saveDocuments() {
         return;
     }
 
-    const companyProfile =
-        document.getElementById("companyProfile").files[0];
+    const vendor = vendors[selectedVendorIndex];
 
-    const isoCertificate =
-        document.getElementById("isoCertificate").files[0];
-
-    const companyRegistration =
-        document.getElementById("companyRegistration").files[0];
-
-    if (companyProfile) {
-        vendors[selectedVendorIndex].documents.companyProfile =
-            companyProfile.name;
+    if (!vendor.documents) {
+        vendor.documents = {};
     }
 
-    if (isoCertificate) {
-        vendors[selectedVendorIndex].documents.isoCertificate =
-            isoCertificate.name;
+    const profile = document.getElementById("companyProfile").files[0];
+    const iso = document.getElementById("isoCertificate").files[0];
+    const registration = document.getElementById("companyRegistration").files[0];
+
+    if (profile) {
+        vendor.documents.companyProfile = profile.name;
     }
 
-    if (companyRegistration) {
-        vendors[selectedVendorIndex].documents.companyRegistration =
-            companyRegistration.name;
+    if (iso) {
+        vendor.documents.isoCertificate = iso.name;
+    }
+
+    if (registration) {
+        vendor.documents.companyRegistration = registration.name;
     }
 
     localStorage.setItem("vendors", JSON.stringify(vendors));
 
-    alert("Documents information saved.");
+    alert("Documents saved successfully.");
 }

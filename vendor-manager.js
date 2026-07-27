@@ -453,7 +453,25 @@ function showVendorDetail(index) {
     document.getElementById("detailCity").value = v.location || "";
     document.getElementById("detailContact").value = v.contact || "";
     document.getElementById("detailStatus").value = v.approval || "";
+    const statusDiv = document.getElementById("documentStatus");
 
+    if (statusDiv) {
+
+        const docs = v.documents || {};
+
+        statusDiv.innerHTML = `
+            <h4>Document Status</h4>
+
+            <p>📄 Company Profile :
+            ${docs.companyProfile ? "✅ " + docs.companyProfile : "❌ Not Uploaded"}</p>
+
+            <p>📑 ISO Certificate :
+            ${docs.isoCertificate ? "✅ " + docs.isoCertificate : "❌ Not Uploaded"}</p>
+
+            <p>📜 Company Registration :
+            ${docs.companyRegistration ? "✅ " + docs.companyRegistration : "❌ Not Uploaded"}</p>
+        `;
+    }
 }
 document.getElementById("saveVendorBtn").addEventListener("click", saveVendorDetail);
 function saveVendorDetail() {

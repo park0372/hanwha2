@@ -223,14 +223,19 @@ if (docs.companyRegistration) documentCount++;
         <td>${v.lastUpdate || "-"}</td>
 
 <td>
+<button class="view-btn"
+onclick="showVendorDetail(${index})">
+View
+</button>
+
 <button class="edit-btn"
 onclick="editVendor(${index})">
-✏ Edit
+Edit
 </button>
 
 <button class="delete-btn"
 onclick="deleteVendor(${index})">
-🗑 Delete
+Delete
 </button>
 
 </td>

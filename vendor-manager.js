@@ -409,3 +409,18 @@ function applyFilters() {
 
 categoryFilter.addEventListener("change", applyFilters);
 statusFilter.addEventListener("change", applyFilters);
+let selectedVendorIndex = null;
+
+function showVendorDetail(index) {
+
+    selectedVendorIndex = index;
+
+    const v = vendors[index];
+
+    document.getElementById("detailCompany").value = v.name || "";
+    document.getElementById("detailCategory").value = v.category || "";
+    document.getElementById("detailCity").value = v.location || "";
+
+    document.getElementById("detailStatus").value = v.approval || "";
+
+}

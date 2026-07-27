@@ -216,6 +216,16 @@ onclick="deleteVendor(${index})">
 
 </td>
 `;
+        row.style.cursor = "pointer";
+
+row.addEventListener("click", function (e) {
+
+    if (e.target.tagName === "BUTTON") return;
+
+    showVendorDetail(index);
+
+});
+
     tbody.appendChild(row);
 
 });

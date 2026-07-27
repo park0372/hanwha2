@@ -222,7 +222,7 @@ row.addEventListener("click", function (e) {
 
     if (e.target.tagName === "BUTTON") return;
 
-    showVendorDetail(index);
+    showVendorDetail(v.id);
 
 });
 
@@ -411,7 +411,11 @@ categoryFilter.addEventListener("change", applyFilters);
 statusFilter.addEventListener("change", applyFilters);
 let selectedVendorIndex = null;
 
-function showVendorDetail(index) {
+function showVendorDetail(vendorId) {
+
+    const index = vendors.findIndex(v => v.id === vendorId);
+
+    if (index === -1) return;
 
     selectedVendorIndex = index;
 
@@ -420,7 +424,6 @@ function showVendorDetail(index) {
     document.getElementById("detailCompany").value = v.name || "";
     document.getElementById("detailCategory").value = v.category || "";
     document.getElementById("detailCity").value = v.location || "";
-
     document.getElementById("detailStatus").value = v.approval || "";
 
 }

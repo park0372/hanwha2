@@ -486,3 +486,40 @@ vendors[selectedVendorIndex].contact =
 
     alert("Vendor 정보가 저장되었습니다.");
 }
+document.getElementById("saveDocumentBtn").addEventListener("click", saveDocuments);
+
+function saveDocuments() {
+
+    if (selectedVendorIndex === null) {
+        alert("먼저 Vendor를 선택하세요.");
+        return;
+    }
+
+    const companyProfile =
+        document.getElementById("companyProfile").files[0];
+
+    const isoCertificate =
+        document.getElementById("isoCertificate").files[0];
+
+    const companyRegistration =
+        document.getElementById("companyRegistration").files[0];
+
+    if (companyProfile) {
+        vendors[selectedVendorIndex].documents.companyProfile =
+            companyProfile.name;
+    }
+
+    if (isoCertificate) {
+        vendors[selectedVendorIndex].documents.isoCertificate =
+            isoCertificate.name;
+    }
+
+    if (companyRegistration) {
+        vendors[selectedVendorIndex].documents.companyRegistration =
+            companyRegistration.name;
+    }
+
+    localStorage.setItem("vendors", JSON.stringify(vendors));
+
+    alert("Documents information saved.");
+}

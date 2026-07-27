@@ -424,3 +424,4 @@ function showVendorDetail(index) {
     document.getElementById("detailStatus").value = v.approval || "";
 
 }
+document.getElementById("saveVendorBtn").addEventListener("click", saveVendorDetail);

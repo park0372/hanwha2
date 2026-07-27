@@ -294,7 +294,7 @@ window.addEventListener("click", (e) => {
 
 });
 
-/* Save */
+/* Save */d
 
 saveVendor.addEventListener("click", () => {
 
@@ -317,6 +317,7 @@ if(editIndex >= 0){
         name: company,
         category: category,
         location: city,
+          contact: contact,
         approval: status,
         risk: "Low",
         score: score,
@@ -427,6 +428,7 @@ function showVendorDetail(vendorId) {
     document.getElementById("detailCompany").value = v.name || "";
     document.getElementById("detailCategory").value = v.category || "";
     document.getElementById("detailCity").value = v.location || "";
+    document.getElementById("detailContact").value = v.contact || "";
     document.getElementById("detailStatus").value = v.approval || "";
 
 }

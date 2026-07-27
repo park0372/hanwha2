@@ -440,15 +440,13 @@ categoryFilter.addEventListener("change", applyFilters);
 statusFilter.addEventListener("change", applyFilters);
 
 
-function showVendorDetail(vendorId) {
-
-    const index = vendors.findIndex(v => v.id === vendorId);
-
-    if (index === -1) return;
+function showVendorDetail(index) {
 
     selectedVendorIndex = index;
 
     const v = vendors[index];
+
+    if (!v) return;
 
     document.getElementById("detailCompany").value = v.name || "";
     document.getElementById("detailCategory").value = v.category || "";

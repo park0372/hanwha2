@@ -8,7 +8,7 @@ console.log("vendor-manager.js Loaded");
 
 // Vendor Database
 const savedVendors = localStorage.getItem("vendors");
-
+let selectedVendorIndex = null;
 let vendors = savedVendors
     ? JSON.parse(savedVendors)
     : [
@@ -306,7 +306,7 @@ window.addEventListener("click", (e) => {
 
 });
 
-/* Save */d
+/* Save */
 
 saveVendor.addEventListener("click", () => {
 
@@ -425,7 +425,7 @@ function applyFilters() {
 
 categoryFilter.addEventListener("change", applyFilters);
 statusFilter.addEventListener("change", applyFilters);
-let selectedVendorIndex = null;
+
 
 function showVendorDetail(vendorId) {
 
@@ -460,7 +460,8 @@ function saveVendorDetail() {
 
     vendors[selectedVendorIndex].location =
         document.getElementById("detailCity").value;
-
+vendors[selectedVendorIndex].contact =
+    document.getElementById("detailContact").value;
     vendors[selectedVendorIndex].approval =
         document.getElementById("detailStatus").value;
 

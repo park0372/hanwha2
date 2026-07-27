@@ -206,11 +206,18 @@ function renderVendorTable(data){
     data.forEach((v,index)=>{
 
     const row=document.createElement("tr");
+const docs = v.documents || {};
 
+let documentCount = 0;
+
+if (docs.companyProfile) documentCount++;
+if (docs.isoCertificate) documentCount++;
+if (docs.companyRegistration) documentCount++;
     row.innerHTML=`
         <td>${v.name}</td>
         <td>${v.category}</td>
         <td>${v.location}</td>
+        <td>${documentCount}/3</td>
         <td>${v.approval}</td>
         <td>${v.score}</td>
         <td>${v.lastUpdate || "-"}</td>

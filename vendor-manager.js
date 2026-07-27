@@ -425,3 +425,30 @@ function showVendorDetail(index) {
 
 }
 document.getElementById("saveVendorBtn").addEventListener("click", saveVendorDetail);
+function saveVendorDetail() {
+
+    if (selectedVendorIndex === null) {
+        alert("먼저 Vendor를 선택하세요.");
+        return;
+    }
+
+    vendors[selectedVendorIndex].name =
+        document.getElementById("detailCompany").value;
+
+    vendors[selectedVendorIndex].category =
+        document.getElementById("detailCategory").value;
+
+    vendors[selectedVendorIndex].location =
+        document.getElementById("detailCity").value;
+
+    vendors[selectedVendorIndex].approval =
+        document.getElementById("detailStatus").value;
+
+    // LocalStorage 저장
+    localStorage.setItem("vendors", JSON.stringify(vendors));
+
+    // 테이블 다시 그리기
+    renderVendorTable(vendors);
+
+    alert("Vendor 정보가 저장되었습니다.");
+}

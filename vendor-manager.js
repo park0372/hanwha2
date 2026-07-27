@@ -234,7 +234,7 @@ row.addEventListener("click", function (e) {
 
     if (e.target.tagName === "BUTTON") return;
 
-    showVendorDetail(v.id);
+    showVendorDetail(index);
 
 });
 

@@ -169,6 +169,26 @@ const categoryChart = new Chart(categoryCtx, {
         maintainAspectRatio: false
     }
 });
+function updateCategoryChart() {
+
+    if (typeof vendors === "undefined") return;
+
+    const categories = [
+        "Civil",
+        "Electrical",
+        "Mechanical",
+        "Material",
+        "Housing"
+    ];
+
+    const counts = categories.map(category =>
+        vendors.filter(v => v.category === category).length
+    );
+
+    categoryChart.data.datasets[0].data = counts;
+
+    categoryChart.update();
+}
 /* ===========================
    Search
 =========================== */
@@ -234,6 +254,7 @@ function updateVendorKPI(){
 }
 updateVendorKPI();
 updateSurveyChart();
+updateCategoryChart();
 
 
 

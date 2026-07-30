@@ -655,3 +655,77 @@ function exportVendorCSV() {
     document.body.removeChild(link);
 
 }
+// ============================================
+// Import Vendor List (CSV)
+// ============================================
+
+document.getElementById("importVendorFile")
+.addEventListener("change", importVendorCSV);
+
+function importVendorCSV(event) {
+
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        const text = e.target.result;
+
+        const lines = text.split(/\r?\n/);
+
+        if (lines.length <= 1) return;
+
+        for (let i = 1; i < lines.length; i++) {
+
+            if (!lines[i].trim()) continue;
+
+            const cols = lines[i]
+                .split(",")
+                .map(v => v.replace(/"/g, "").trim());
+
+            vendors.push({
+
+                id: "V" + Date.now() + i,
+
+                name: cols[0] || "",
+
+                category: cols[1] || "",
+
+                location: cols[2] || "",
+
+                contact: cols[3] || "",
+
+                phone: cols[4] || "",
+
+                email: cols[5] || "",
+
+                website: cols[6] || "",
+
+                approval: cols[7] || "Pending",
+
+                lastUpdate: cols[8] || new Date().toISOString().split("T")[0]
+
+            });
+
+        }
+
+        localStorage.setItem("vendors", JSON.stringify(vendors));
+
+        renderVendorTable();
+        updateVendorKPI();
+
+        if (typeof updateSurveyChart === "function")
+            updateSurveyChart();
+
+        if (typeof updateCategoryChart === "function")
+            updateCategoryChart();
+
+        alert("Vendor List Imported Successfully.");
+
+    };
+
+    reader.readAsText(file);
+
+}

@@ -288,6 +288,7 @@ function updateVendorKPI(){
 updateVendorKPI();
 updateSurveyChart();
 updateCategoryChart();
+updateRiskChart();
 
 
 

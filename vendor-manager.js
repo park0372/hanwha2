@@ -729,3 +729,9 @@ function importVendorCSV(event) {
     reader.readAsText(file);
 
 }
+document.getElementById("importExcelBtn")
+.addEventListener("click", () => {
+
+    document.getElementById("importVendorFile").click();
+
+});

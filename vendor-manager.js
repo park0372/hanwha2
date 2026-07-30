@@ -427,10 +427,10 @@ function applyFilters() {
         .trim()
         .toLowerCase();
 
-    const category = categoryFilter.value;
-    const status = statusFilter.value;
+    const category = document.getElementById("filterCategory")?.value || "";
+    const status = document.getElementById("filterStatus")?.value || "";
 
-    let filtered = vendors.filter(v => {
+    const filtered = vendors.filter(v => {
 
         const matchKeyword =
             keyword === "" ||
@@ -441,23 +441,29 @@ function applyFilters() {
             (v.contact || "").toLowerCase().includes(keyword);
 
         const matchCategory =
-            category === "" ||
-            v.category === category;
+            category === "" || v.category === category;
 
         const matchStatus =
-            status === "" ||
-            v.approval === status;
+            status === "" || v.approval === status;
 
         return matchKeyword && matchCategory && matchStatus;
 
     });
 
-    applyFilters();
+    renderVendorTable(filtered);
 
 }
 
-categoryFilter.addEventListener("change", applyFilters);
-statusFilter.addEventListener("change", applyFilters);
+const categoryFilter = document.getElementById("filterCategory");
+const statusFilter = document.getElementById("filterStatus");
+
+if (categoryFilter) {
+    categoryFilter.addEventListener("change", applyFilters);
+}
+
+if (statusFilter) {
+    statusFilter.addEventListener("change", applyFilters);
+}
 
 
 function showVendorDetail(index) {

@@ -544,12 +544,12 @@ function updateDashboard() {
 
     const total = vendors.length;
 
-    const approved = vendors.filter(v => v.status === "Approved").length;
+    const approved = vendors.filter(v => v.approval === "Approved").length;
 
-    const pending = vendors.filter(v => v.status === "Pending").length;
+    const pending = vendors.filter(v => v.approval === "Pending").length;
 
-    // Survey Completed (필요 시 조건 변경 가능)
-    const reviewed = vendors.filter(v => v.status === "Reviewed").length;
+    // 현재는 Approved를 Survey Completed로 사용
+    const reviewed = approved;
 
     document.getElementById("totalVendor").textContent = total;
     document.getElementById("reviewVendor").textContent = reviewed;

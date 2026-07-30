@@ -156,7 +156,13 @@ function updateSurveyChart() {
 const categoryCtx = document.getElementById("categoryChart");
 
 const categoryChart = new Chart(categoryCtx, {
-    
+    type: "bar",
+    data: {
+        labels: ["Civil", "Electrical", "Mechanical", "Material", "Housing"],
+        datasets: [{
+            label: "Vendor Count",
+            data: [0, 0, 0, 0, 0]
+        }]    
 /* ===========================
    Search
 =========================== */

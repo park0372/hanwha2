@@ -83,11 +83,11 @@ if (companySearch) {
 
         const filtered = vendors.filter(v =>
 
-            v.name.toLowerCase().includes(keyword) ||
-
-            v.category.toLowerCase().includes(keyword) ||
-
-            v.location.toLowerCase().includes(keyword)
+            (v.name || "").toLowerCase().includes(keyword) ||
+            (v.category || "").toLowerCase().includes(keyword) ||
+            (v.location || "").toLowerCase().includes(keyword) ||
+            (v.approval || "").toLowerCase().includes(keyword) ||
+            (v.contact || "").toLowerCase().includes(keyword)
 
         );
 

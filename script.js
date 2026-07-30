@@ -189,6 +189,21 @@ function updateCategoryChart() {
 
     categoryChart.update();
 }
+const riskCtx = document.getElementById("riskChart");
+
+const riskChart = new Chart(riskCtx, {
+    type: "pie",
+    data: {
+        labels: ["Low", "Medium", "High"],
+        datasets: [{
+            data: [0, 0, 0]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
 /* ===========================
    Search
 =========================== */

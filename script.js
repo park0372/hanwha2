@@ -217,6 +217,7 @@ function updateVendorKPI(){
 
 }
 updateVendorKPI();
+updateSurveyChart();
 
 
 

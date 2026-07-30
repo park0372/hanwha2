@@ -1149,3 +1149,39 @@ th{
     color:#1f2937;
 
 }
+/* ===========================
+   Form Grid
+=========================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+.form-grid input,
+.form-grid select{
+
+    width:100%;
+
+    padding:10px 12px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    box-sizing:border-box;
+
+}
+
+.full-width{
+
+    grid-column:1 / span 2;
+
+}

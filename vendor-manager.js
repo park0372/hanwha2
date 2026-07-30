@@ -490,7 +490,6 @@ document.getElementById("detailPhone").value = v.phone || "";
 document.getElementById("detailRemarks").value = v.remarks || "";
 
 const statusDiv = document.getElementById("documentStatus");
-    const statusDiv = document.getElementById("documentStatus");
 
     if (statusDiv) {
 

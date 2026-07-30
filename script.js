@@ -162,7 +162,13 @@ const categoryChart = new Chart(categoryCtx, {
         datasets: [{
             label: "Vendor Count",
             data: [0, 0, 0, 0, 0]
-        }]    
+        }]  
+                },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
 /* ===========================
    Search
 =========================== */

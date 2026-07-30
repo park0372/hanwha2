@@ -99,7 +99,7 @@ const ctx = document
     .getElementById("surveyChart")
     .getContext("2d");
 
-new Chart(ctx,{
+const surveyChart = new Chart(ctx,{
 
 type: "doughnut",
 

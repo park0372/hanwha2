@@ -119,6 +119,22 @@ type: "doughnut",
     cutout: "60%"
 }]
 },
+    const categoryCtx = document.getElementById("categoryChart");
+
+const categoryChart = new Chart(categoryCtx, {
+    type: "bar",
+    data: {
+        labels: ["Civil", "Electrical", "Mechanical", "Material", "Housing"],
+        datasets: [{
+            label: "Vendor Count",
+            data: [0, 0, 0, 0, 0]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
     options:{
     responsive:true,
     maintainAspectRatio:false,

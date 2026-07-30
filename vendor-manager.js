@@ -495,9 +495,12 @@ const statusDiv = document.getElementById("documentStatus");
     if (statusDiv) {
 
         const docs = v.documents || {};
-
+        const uploadedCount =
+    (docs.companyProfile ? 1 : 0) +
+    (docs.isoCertificate ? 1 : 0) +
+    (docs.companyRegistration ? 1 : 0);
         statusDiv.innerHTML = `
-            <h4>Document Status</h4>
+            <h4>Document Status (${uploadedCount}/3)</h4>
 
             <p>📄 Company Profile :
             ${docs.companyProfile ? "✅ " + docs.companyProfile : "❌ Not Uploaded"}</p>
@@ -530,6 +533,17 @@ vendors[selectedVendorIndex].contact =
     document.getElementById("detailContact").value;
     vendors[selectedVendorIndex].approval =
         document.getElementById("detailStatus").value;
+    vendors[selectedVendorIndex].phone =
+    document.getElementById("detailPhone").value;
+
+vendors[selectedVendorIndex].email =
+    document.getElementById("detailEmail").value;
+
+vendors[selectedVendorIndex].website =
+    document.getElementById("detailWebsite").value;
+
+vendors[selectedVendorIndex].remarks =
+    document.getElementById("detailRemarks").value;
 
     // LocalStorage 저장
     localStorage.setItem("vendors", JSON.stringify(vendors));

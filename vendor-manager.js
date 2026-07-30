@@ -604,3 +604,54 @@ function updateDashboard() {
     document.getElementById("approvedVendor").textContent = approved;
 
 }
+// ============================================
+// Export Vendor List (CSV)
+// ============================================
+
+document.getElementById("exportExcelBtn").addEventListener("click", exportVendorCSV);
+
+function exportVendorCSV() {
+
+    const headers = [
+        "Company",
+        "Category",
+        "City",
+        "Contact",
+        "Phone",
+        "Email",
+        "Website",
+        "Status",
+        "Last Update"
+    ];
+
+    const rows = vendors.map(v => [
+        v.name || "",
+        v.category || "",
+        v.location || "",
+        v.contact || "",
+        v.phone || "",
+        v.email || "",
+        v.website || "",
+        v.approval || "",
+        v.lastUpdate || ""
+    ]);
+
+    const csv = [
+        headers.join(","),
+        ...rows.map(row => row.map(value => `"${value}"`).join(","))
+    ].join("\n");
+
+    const blob = new Blob([csv], {
+        type: "text/csv;charset=utf-8;"
+    });
+
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+    link.download = "Vendor_List.csv";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+}

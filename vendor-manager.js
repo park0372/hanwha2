@@ -272,7 +272,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (typeof updateSurveyChart === "function") {
     updateSurveyChart();
 }
-
+if (typeof updateCategoryChart === "function") {
+    updateCategoryChart();
+}
 });
 /* ==========================================
    Vendor Modal

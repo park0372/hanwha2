@@ -24,7 +24,7 @@ let vendors = savedVendors
     website: "www.abcelec.iq",
         approval: "Approved",
         risk: "Low",
-        score: 90,
+
         lastUpdate: "2026-07-26"
     },
 
@@ -40,7 +40,7 @@ let vendors = savedVendors
     website: "www.abcelec.iq",
         approval: "Pending",
         risk: "Medium",
-        score: 72,
+
         lastUpdate: "2026-07-26"
     },
 
@@ -56,7 +56,7 @@ let vendors = savedVendors
     website: "www.abcelec.iq",
         approval: "Approved",
         risk: "High",
-        score: 55,
+
         lastUpdate: "2026-07-26"
     }
 
@@ -219,7 +219,7 @@ if (docs.companyRegistration) documentCount++;
         <td>${v.location}</td>
         <td>${documentCount}/3</td>
         <td>${v.approval}</td>
-        <td>${v.score}</td>
+ 
         <td>${v.lastUpdate || "-"}</td>
 
 <td>
@@ -323,7 +323,7 @@ saveVendor.addEventListener("click", () => {
     const company = document.getElementById("vendorCompany").value.trim();
     const category = document.getElementById("vendorCategory").value.trim();
     const city = document.getElementById("vendorCity").value.trim();
-    const score = Number(document.getElementById("vendorScore").value);
+
     const status = document.getElementById("vendorStatus").value;
     const contact = document.getElementById("vendorContact").value.trim();
 
@@ -342,7 +342,7 @@ if(editIndex >= 0){
           contact: contact,
         approval: status,
         risk: "Low",
-        score: score,
+  
             documents: vendors[editIndex].documents || {
         companyProfile: "",
         isoCertificate: "",
@@ -364,7 +364,7 @@ vendors.push({
 
     approval: status,
     risk: "Low",
-    score: score,
+  
 
     documents: {
         companyProfile: "",
@@ -387,7 +387,7 @@ alert("LocalStorage Saved!");
     document.getElementById("vendorCompany").value="";
     document.getElementById("vendorCategory").value="";
     document.getElementById("vendorCity").value="";
-    document.getElementById("vendorScore").value="";
+
 
     modal.style.display="none";
 });
@@ -417,7 +417,7 @@ function editVendor(index){
     document.getElementById("vendorCategory").value = v.category;
     document.getElementById("vendorCity").value = v.location;
     document.getElementById("vendorContact").value = v.contact || "";
-    document.getElementById("vendorScore").value = v.score;
+
     document.getElementById("vendorStatus").value = v.approval;
 editIndex = index;
     modal.style.display = "flex";

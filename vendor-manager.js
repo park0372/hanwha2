@@ -269,6 +269,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (typeof updateVendorKPI === "function") {
         updateVendorKPI();
     }
+    if (typeof updateSurveyChart === "function") {
+    updateSurveyChart();
+}
 
 });
 /* ==========================================

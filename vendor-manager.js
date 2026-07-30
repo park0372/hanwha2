@@ -540,3 +540,20 @@ function saveDocuments() {
 
     alert("Documents saved successfully.");
 }
+function updateDashboard() {
+
+    const total = vendors.length;
+
+    const approved = vendors.filter(v => v.status === "Approved").length;
+
+    const pending = vendors.filter(v => v.status === "Pending").length;
+
+    // Survey Completed (필요 시 조건 변경 가능)
+    const reviewed = vendors.filter(v => v.status === "Reviewed").length;
+
+    document.getElementById("totalVendor").textContent = total;
+    document.getElementById("reviewVendor").textContent = reviewed;
+    document.getElementById("pendingVendor").textContent = pending;
+    document.getElementById("approvedVendor").textContent = approved;
+
+}

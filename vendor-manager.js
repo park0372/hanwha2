@@ -421,24 +421,39 @@ editIndex = index;
 // Category / Status Filter
 // ============================================
 
-const categoryFilter = document.getElementById("filterCategory");
-const statusFilter = document.getElementById("filterStatus");
-
 function applyFilters() {
 
-    let filtered = [...vendors];
+    const keyword = (document.getElementById("companySearch")?.value || "")
+        .trim()
+        .toLowerCase();
 
-    // Category Filter
-    if (categoryFilter.value !== "") {
-        filtered = filtered.filter(v => v.category === categoryFilter.value);
-    }
+    const category = categoryFilter.value;
+    const status = statusFilter.value;
 
-    // Status Filter
-    if (statusFilter.value !== "") {
-        filtered = filtered.filter(v => v.approval === statusFilter.value);
-    }
+    let filtered = vendors.filter(v => {
 
-    renderVendorTable(filtered);
+        const matchKeyword =
+            keyword === "" ||
+            (v.name || "").toLowerCase().includes(keyword) ||
+            (v.category || "").toLowerCase().includes(keyword) ||
+            (v.location || "").toLowerCase().includes(keyword) ||
+            (v.approval || "").toLowerCase().includes(keyword) ||
+            (v.contact || "").toLowerCase().includes(keyword);
+
+        const matchCategory =
+            category === "" ||
+            v.category === category;
+
+        const matchStatus =
+            status === "" ||
+            v.approval === status;
+
+        return matchKeyword && matchCategory && matchStatus;
+
+    });
+
+    applyFilters();
+
 }
 
 categoryFilter.addEventListener("change", applyFilters);

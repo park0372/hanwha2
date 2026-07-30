@@ -484,6 +484,12 @@ function showVendorDetail(index) {
     document.getElementById("detailCity").value = v.location || "";
     document.getElementById("detailContact").value = v.contact || "";
     document.getElementById("detailStatus").value = v.approval || "";
+    document.getElementById("detailWebsite").value = v.website || "";
+document.getElementById("detailEmail").value = v.email || "";
+document.getElementById("detailPhone").value = v.phone || "";
+document.getElementById("detailRemarks").value = v.remarks || "";
+
+const statusDiv = document.getElementById("documentStatus");
     const statusDiv = document.getElementById("documentStatus");
 
     if (statusDiv) {

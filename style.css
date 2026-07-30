@@ -1117,3 +1117,35 @@ th{
     background:linear-gradient(135deg,#2563eb,#1d4ed8);
 
 }
+/* ===========================
+   Card Style
+=========================== */
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:14px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.08);
+
+    border:1px solid #e5e7eb;
+
+}
+
+.section-title{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:16px;
+
+    color:#1f2937;
+
+}

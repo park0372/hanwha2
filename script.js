@@ -134,7 +134,22 @@ type: "doughnut",
     }
     }        
 });
+function updateSurveyChart() {
 
+    if (typeof vendors === "undefined") return;
+    if (typeof surveyChart === "undefined") return;
+
+    const approved = vendors.filter(v => v.approval === "Approved").length;
+    const review = vendors.filter(v => v.approval === "Review").length;
+    const pending = vendors.filter(v => v.approval === "Pending").length;
+    const survey = vendors.filter(v => v.approval === "Survey").length;
+
+    surveyChart.data.datasets[0].data = [
+        approved,
+        review,
+        pending,
+        survey
+    ];
 
 /* ===========================
    Search

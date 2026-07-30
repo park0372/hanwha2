@@ -1059,3 +1059,24 @@ th{
     cursor:pointer;
 
 }
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.dashboard-grid .panel {
+    min-height: 320px;
+}
+
+.chart-box {
+    position: relative;
+    height: 260px;
+    width: 100%;
+}
+
+.chart-box canvas {
+    width: 100% !important;
+    height: 100% !important;
+}

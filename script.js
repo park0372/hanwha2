@@ -150,7 +150,9 @@ function updateSurveyChart() {
         pending,
         survey
     ];
+   surveyChart.update();
 
+}
 /* ===========================
    Search
 =========================== */

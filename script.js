@@ -153,6 +153,10 @@ function updateSurveyChart() {
    surveyChart.update();
 
 }
+const categoryCtx = document.getElementById("categoryChart");
+
+const categoryChart = new Chart(categoryCtx, {
+    
 /* ===========================
    Search
 =========================== */

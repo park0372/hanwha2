@@ -204,6 +204,24 @@ const riskChart = new Chart(riskCtx, {
         maintainAspectRatio: false
     }
 });
+function updateRiskChart() {
+
+    if (typeof vendors === "undefined") return;
+    if (typeof riskChart === "undefined") return;
+
+    const low = vendors.filter(v => v.risk === "Low").length;
+    const medium = vendors.filter(v => v.risk === "Medium").length;
+    const high = vendors.filter(v => v.risk === "High").length;
+
+    riskChart.data.datasets[0].data = [
+        low,
+        medium,
+        high
+    ];
+
+    riskChart.update();
+
+}
 /* ===========================
    Search
 =========================== */

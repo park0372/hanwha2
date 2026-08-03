@@ -557,36 +557,10 @@ const saveDocBtn = document.getElementById("saveDocumentBtn");
 if (saveDocBtn) {
     saveDocBtn.addEventListener("click", saveDocuments);
 }
-
 function saveDocuments() {
-
-    if (selectedVendorIndex === null) {
-        alert("먼저 Vendor를 선택하세요.");
-        return;
-    }
-
+    console.log("Documents module temporarily disabled.");
 }
 
-    const profile = document.getElementById("companyProfile").files[0];
-    const iso = document.getElementById("isoCertificate").files[0];
-    const registration = document.getElementById("companyRegistration").files[0];
-
-    if (profile) {
-        vendor.documents.companyProfile = profile.name;
-    }
-
-    if (iso) {
-        vendor.documents.isoCertificate = iso.name;
-    }
-
-    if (registration) {
-        vendor.documents.companyRegistration = registration.name;
-    }
-
-    localStorage.setItem("vendors", JSON.stringify(vendors));
-
-    alert("Documents saved successfully.");
-}
 function updateDashboard() {
 
     const total = vendors.length;

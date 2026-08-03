@@ -543,9 +543,27 @@ vendors[selectedVendorIndex].website =
 
 vendors[selectedVendorIndex].remarks =
     document.getElementById("detailRemarks").value;
-
+vendors[selectedVendorIndex].lastUpdate =
+    new Date().toISOString().split("T")[0];
     // LocalStorage 저장
-    localStorage.setItem("vendors", JSON.stringify(vendors));
+localStorage.setItem("vendors", JSON.stringify(vendors));
+
+// Dashboard 갱신
+updateDashboard();
+
+// KPI 갱신
+if (typeof updateVendorKPI === "function") {
+    updateVendorKPI();
+}
+
+// Chart 갱신
+if (typeof updateSurveyChart === "function") {
+    updateSurveyChart();
+}
+
+if (typeof updateCategoryChart === "function") {
+    updateCategoryChart();
+}
 
     // 테이블 다시 그리기
     renderVendorTable(vendors);

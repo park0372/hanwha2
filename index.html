@@ -420,8 +420,23 @@ MEP
 
 <div class="document-upload">
 
-    <label>Company Profile</label><br>
-    <input type="file" id="companyProfileFile"><br><br>
+   <label>Company Profile</label><br>
+
+<input type="file" id="companyProfileFile" hidden>
+
+<button type="button"
+onclick="document.getElementById('companyProfileFile').click()">
+    Upload
+</button>
+
+<button type="button"
+onclick="viewDocument('companyProfile')">
+    View
+</button>
+
+<span id="companyProfileName">No File</span>
+
+<br><br>
 
     <label>ISO Certificate</label><br>
     <input type="file" id="isoCertificateFile"><br><br>

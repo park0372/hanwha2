@@ -153,75 +153,7 @@ function updateSurveyChart() {
    surveyChart.update();
 
 }
-const categoryCtx = document.getElementById("categoryChart");
 
-const categoryChart = new Chart(categoryCtx, {
-    type: "bar",
-    data: {
-        labels: ["Civil", "Electrical", "Mechanical", "Material", "Housing"],
-        datasets: [{
-            label: "Vendor Count",
-            data: [0, 0, 0, 0, 0]
-        }]  
-                },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false
-    }
-});
-function updateCategoryChart() {
-
-    if (typeof vendors === "undefined") return;
-
-    const categories = [
-        "Civil",
-        "Electrical",
-        "Mechanical",
-        "Material",
-        "Housing"
-    ];
-
-    const counts = categories.map(category =>
-        vendors.filter(v => v.category === category).length
-    );
-
-    categoryChart.data.datasets[0].data = counts;
-
-    categoryChart.update();
-}
-const riskCtx = document.getElementById("riskChart");
-
-const riskChart = new Chart(riskCtx, {
-    type: "pie",
-    data: {
-        labels: ["Low", "Medium", "High"],
-        datasets: [{
-            data: [0, 0, 0]
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false
-    }
-});
-function updateRiskChart() {
-
-    if (typeof vendors === "undefined") return;
-    if (typeof riskChart === "undefined") return;
-
-    const low = vendors.filter(v => v.risk === "Low").length;
-    const medium = vendors.filter(v => v.risk === "Medium").length;
-    const high = vendors.filter(v => v.risk === "High").length;
-
-    riskChart.data.datasets[0].data = [
-        low,
-        medium,
-        high
-    ];
-
-    riskChart.update();
-
-}
 /* ===========================
    Search
 =========================== */

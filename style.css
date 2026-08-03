@@ -1202,3 +1202,93 @@ th{
 .vendor-detail-section hr{
     margin:20px 0;
 }
+/* ===========================
+   Vendor Workspace V3
+=========================== */
+
+.vendor-workspace{
+    display:grid;
+    grid-template-columns: 65% 35%;
+    gap:20px;
+    margin-top:20px;
+    align-items:start;
+}
+
+.vendor-left,
+.vendor-right{
+    width:100%;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.toolbar{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.toolbar input,
+.toolbar select{
+    height:36px;
+    padding:0 10px;
+}
+
+.vendor-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.vendor-table th{
+    background:#f5f7fb;
+    padding:12px;
+    text-align:left;
+}
+
+.vendor-table td{
+    padding:12px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.detail-grid textarea{
+    grid-column:1 / 3;
+}
+
+.detail-grid input,
+.detail-grid select,
+.detail-grid textarea{
+
+    width:100%;
+    padding:10px;
+    border:1px solid #d9dde5;
+    border-radius:8px;
+}
+
+.detail-buttons{
+
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.danger-btn{
+
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}

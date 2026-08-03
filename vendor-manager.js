@@ -712,13 +712,16 @@ function importVendorCSV(event) {
 }
 const importBtn = document.getElementById("importExcelBtn");
 
-if (importBtn) {
+if (importBtn && importVendorFile) {
     importBtn.addEventListener("click", () => {
-        document.getElementById("importVendorFile").click();
+        importVendorFile.click();
     });
 }
-document.getElementById("importVendorFile")
-.addEventListener("change", importVendorCSV);
+const importVendorFile = document.getElementById("importVendorFile");
+
+if (importVendorFile) {
+    importVendorFile.addEventListener("change", importVendorCSV);
+}
 // ============================================
 // CSV Import
 // ============================================

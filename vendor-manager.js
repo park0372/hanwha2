@@ -582,7 +582,11 @@ function updateDashboard() {
 // Export Vendor List (CSV)
 // ============================================
 
-document.getElementById("exportExcelBtn").addEventListener("click", exportVendorCSV);
+const exportBtn = document.getElementById("exportExcelBtn");
+
+if (exportBtn) {
+    exportBtn.addEventListener("click", exportVendorCSV);
+}
 
 function exportVendorCSV() {
 
@@ -633,8 +637,11 @@ function exportVendorCSV() {
 // Import Vendor List (CSV)
 // ============================================
 
-document.getElementById("importVendorFile")
-.addEventListener("change", importVendorCSV);
+const importFile = document.getElementById("importVendorFile");
+
+if (importFile) {
+    importFile.addEventListener("change", importVendorCSV);
+}
 
 function importVendorCSV(event) {
 
@@ -703,12 +710,13 @@ function importVendorCSV(event) {
     reader.readAsText(file);
 
 }
-document.getElementById("importExcelBtn")
-.addEventListener("click", () => {
+const importBtn = document.getElementById("importExcelBtn");
 
-    document.getElementById("importVendorFile").click();
-
-});
+if (importBtn) {
+    importBtn.addEventListener("click", () => {
+        document.getElementById("importVendorFile").click();
+    });
+}
 document.getElementById("importVendorFile")
 .addEventListener("change", importVendorCSV);
 // ============================================

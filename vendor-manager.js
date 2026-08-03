@@ -565,7 +565,6 @@ function saveDocuments() {
         return;
     }
 
-    ...
 }
 
     const profile = document.getElementById("companyProfile").files[0];

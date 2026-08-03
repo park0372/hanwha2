@@ -576,25 +576,32 @@ if (saveDocBtn) {
     saveDocBtn.addEventListener("click", saveDocuments);
 }
 function saveDocuments() {
-    console.log("Documents module temporarily disabled.");
-}
 
-function updateDashboard() {
+    if (selectedVendorIndex === null) {
+        alert("먼저 Vendor를 선택하세요.");
+        return;
+    }
 
-    const total = vendors.length;
+    if (!vendors[selectedVendorIndex].documents) {
+        vendors[selectedVendorIndex].documents = {};
+    }
 
-    const approved = vendors.filter(v => v.approval === "Approved").length;
+    // Company Profile
+    const companyProfile =
+        document.getElementById("companyProfileFile").files[0];
 
-    const pending = vendors.filter(v => v.approval === "Pending").length;
+    if (companyProfile) {
+        vendors[selectedVendorIndex].documents.companyProfile =
+            companyProfile.name;
 
-    // 현재는 Approved를 Survey Completed로 사용
-    const reviewed = approved;
+        document.getElementById("companyProfileName").textContent =
+            companyProfile.name;
+    }
 
-    document.getElementById("totalVendor").textContent = total;
-    document.getElementById("reviewVendor").textContent = reviewed;
-    document.getElementById("pendingVendor").textContent = pending;
-    document.getElementById("approvedVendor").textContent = approved;
+    // LocalStorage 저장
+    localStorage.setItem("vendors", JSON.stringify(vendors));
 
+    alert("Document Saved");
 }
 // ============================================
 // Export Vendor List (CSV)
@@ -818,4 +825,22 @@ function importVendorCSV(event) {
 
     reader.readAsText(file);
 
+}
+function viewDocument(type){
+
+    if(selectedVendorIndex === null){
+        alert("먼저 Vendor를 선택하세요.");
+        return;
+    }
+
+    const docs = vendors[selectedVendorIndex].documents || {};
+
+    const fileName = docs[type];
+
+    if(!fileName){
+        alert("No uploaded file.");
+        return;
+    }
+
+    alert("Uploaded File : " + fileName);
 }

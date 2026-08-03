@@ -372,46 +372,66 @@ MEP
 
 <section class="vendor-detail-section">
 
-    <div class="panel card">
+<div class="panel card">
 
-        <h3 class="section-title">Vendor Detail</h3>
+<h3 class="section-title">Vendor Detail Information</h3>
 
-        <input id="detailCompany" placeholder="Company Name">
+<div class="form-grid">
 
-        <select id="detailCategory">
-            <option value="">Select Category</option>
-            <option>Civil</option>
-            <option>Housing</option>
-            <option>Architectural</option>
-            <option>Electrical</option>
-            <option>Mechanical</option>
-            <option>Material</option>
-        </select>
+<input id="detailCompany" placeholder="Company Name">
 
-        <input id="detailCity" placeholder="City">    <input id="detailContact" placeholder="Contact Person">      <input id="detailPhone" placeholder="Phone"><input id="detailEmail" placeholder="Email"> 
-        <input
-    id="detailWebsite"
-    class="full-width"
-    placeholder="Website">
+<input id="detailVendorCode" placeholder="Vendor Code">
 
-    
+<select id="detailCategory">
+    <option value="">Category</option>
+    <option>Civil</option>
+    <option>Housing</option>
+    <option>Architectural</option>
+    <option>Electrical</option>
+    <option>Mechanical</option>
+    <option>Material</option>
+</select>
 
-  
+<input id="detailCity" placeholder="City">
 
-        
+<input id="detailCountry" placeholder="Country">
 
-       
+<select id="detailRisk">
+    <option>Low</option>
+    <option>Medium</option>
+    <option>High</option>
+</select>
+
+<input id="detailContact" placeholder="Contact Person">
+
+<input id="detailPhone" placeholder="Phone">
+
+<input id="detailEmail" placeholder="Email">
+
+<input id="detailWebsite" placeholder="Website">
+
+<select id="detailQualification">
+    <option>Qualified</option>
+    <option>Conditionally Qualified</option>
+    <option>Rejected</option>
+</select>
+
+<select id="detailStatus">
+    <option>Approved</option>
+    <option>Pending</option>
+    <option>Review</option>
+</select>
+
 <textarea
-    id="detailRemarks"
-    placeholder="Remarks / Notes"
-    rows="4">
+id="detailRemarks"
+class="full-width"
+rows="4"
+placeholder="Remarks">
 </textarea>
-        <select id="detailStatus">
-            <option>Approved</option>
-            <option>Pending</option>
-            <option>Review</option>
-        </select>
-<hr>
+
+</div>
+
+<hr style="margin:25px 0">
 
 <h3>Vendor Documents</h3>
 
@@ -425,27 +445,46 @@ MEP
 <input type="file" id="companyRegistration" accept=".pdf"><br><br>
 
 <button id="saveDocumentBtn" class="primary-btn">
-    💾 Save Documents
+💾 Save Documents
 </button>
-<hr>
+
+<hr style="margin:25px 0">
+
 <button id="exportExcelBtn" class="primary-btn">
-    📊 Export Vendor List
+📊 Export Vendor List
 </button>
-        <input
-    type="file"
-    id="importVendorFile"
-    accept=".csv"
-    style="display:none">
+
+<input
+type="file"
+id="importVendorFile"
+accept=".csv"
+style="display:none">
 
 <button id="importExcelBtn" class="primary-btn">
-    📥 Import Vendor List
+📥 Import Vendor List
 </button>
-<div id="documentStatus"></div>
-        <button id="saveVendorBtn" class="primary-btn">
-            💾 Save Vendor
-        </button>
 
-    </div>
+<div id="documentStatus"></div>
+
+<div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+
+<button id="saveVendorBtn" class="primary-btn">
+💾 Save
+</button>
+
+<button id="deleteVendorBtn" class="primary-btn"
+style="background:#ef4444;">
+🗑 Delete
+</button>
+
+<button id="resetVendorBtn" class="primary-btn"
+style="background:#6b7280;">
+↺ Reset
+</button>
+
+</div>
+
+</div>
 
 </section>
 

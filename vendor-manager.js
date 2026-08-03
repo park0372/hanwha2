@@ -552,7 +552,11 @@ vendors[selectedVendorIndex].remarks =
 
     alert("Vendor 정보가 저장되었습니다.");
 }
-document.getElementById("saveDocumentBtn").addEventListener("click", saveDocuments);
+const saveDocBtn = document.getElementById("saveDocumentBtn");
+
+if (saveDocBtn) {
+    saveDocBtn.addEventListener("click", saveDocuments);
+}
 
 function saveDocuments() {
 
@@ -561,11 +565,8 @@ function saveDocuments() {
         return;
     }
 
-    const vendor = vendors[selectedVendorIndex];
-
-    if (!vendor.documents) {
-        vendor.documents = {};
-    }
+    ...
+}
 
     const profile = document.getElementById("companyProfile").files[0];
     const iso = document.getElementById("isoCertificate").files[0];

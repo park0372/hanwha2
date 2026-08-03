@@ -290,188 +290,133 @@ MEP
 
 </section>
 
-    <section class="company-section">
+<section class="vendor-workspace">
 
-    <div class="panel">
+    <!-- =======================
+         Vendor Database
+    ======================== -->
+    <div class="vendor-left">
 
-      <div class="table-header">
+        <div class="panel">
 
-    <h3>Vendor Database</h3>
+            <div class="section-header">
 
-    <div class="toolbar">
+                <h3>Vendor Database</h3>
 
-        <button id="addVendorBtn" class="primary-btn">
-            + Add Vendor
-        </button>
+                <div class="toolbar">
 
-        <select id="filterCategory">
-            <option value="">Select Category</option>
-<option>Civil</option>
-<option>Housing</option>
-<option>Architectural</option>
-<option>Electrical</option>
-<option>Mechanical</option>
-<option>Material</option>
-        </select>
+                    <button id="addVendorBtn" class="primary-btn">
+                        + Add Vendor
+                    </button>
 
-        <select id="filterStatus">
-            <option value="">All Status</option>
-            <option>Approved</option>
-            <option>Pending</option>
-            <option>Review</option>
-        </select>
+                    <select id="categoryFilter">
+                        <option value="">All Category</option>
+                        <option>Civil</option>
+                        <option>Electrical</option>
+                        <option>Mechanical</option>
+                        <option>Material</option>
+                        <option>Housing</option>
+                    </select>
 
-        <input
-            type="text"
-            id="companySearch"
-            placeholder="Search Vendor...">
+                    <select id="statusFilter">
+                        <option value="">All Status</option>
+                        <option>Approved</option>
+                        <option>Pending</option>
+                        <option>Review</option>
+                    </select>
+
+                    <input
+                        id="vendorSearch"
+                        type="text"
+                        placeholder="Search Vendor...">
+
+                </div>
+
+            </div>
+
+            <table class="vendor-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Company</th>
+                        <th>Category</th>
+                        <th>City</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="vendorTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
 
     </div>
 
-</div>
+    <!-- =======================
+         Vendor Detail
+    ======================== -->
 
-        <table id="companyTable">
+    <div class="vendor-right">
 
-            <thead>
+        <div class="panel">
 
-                <tr>
+            <h3>Vendor Detail</h3>
 
-                   <th>Company</th>
-<th>Category</th>
-<th>City</th>
-<th>Documents</th>
-<th>Status</th>
-<th>Last Update</th>
-<th>Action</th>
-                </tr>
+            <div class="detail-grid">
 
-            </thead>
+                <input id="detailCompany" placeholder="Company Name">
 
-            <tbody id="vendorTable">
+                <select id="detailCategory">
+                    <option value="">Category</option>
+                    <option>Civil</option>
+                    <option>Electrical</option>
+                    <option>Mechanical</option>
+                    <option>Material</option>
+                    <option>Housing</option>
+                </select>
 
-            </tbody>
+                <input id="detailCity" placeholder="City">
 
-        </table>
+                <select id="detailStatus">
+                    <option>Approved</option>
+                    <option>Pending</option>
+                    <option>Review</option>
+                </select>
+
+                <input id="detailContact" placeholder="Contact">
+
+                <input id="detailPhone" placeholder="Phone">
+
+                <input id="detailEmail" placeholder="Email">
+
+                <textarea
+                    id="detailRemarks"
+                    rows="4"
+                    placeholder="Remarks"></textarea>
+
+            </div>
+
+            <div class="detail-buttons">
+
+                <button id="saveVendorBtn" class="primary-btn">
+                    Save
+                </button>
+
+                <button id="deleteVendorBtn" class="danger-btn">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
-
-</section>
-
-<section class="vendor-detail-section">
-
-<div class="panel card">
-
-<h3 class="section-title">Vendor Detail Information</h3>
-
-<div class="form-grid">
-
-<input id="detailCompany" placeholder="Company Name">
-
-<input id="detailVendorCode" placeholder="Vendor Code">
-
-<select id="detailCategory">
-    <option value="">Category</option>
-    <option>Civil</option>
-    <option>Housing</option>
-    <option>Architectural</option>
-    <option>Electrical</option>
-    <option>Mechanical</option>
-    <option>Material</option>
-</select>
-
-<input id="detailCity" placeholder="City">
-
-<input id="detailCountry" placeholder="Country">
-
-<select id="detailRisk">
-    <option>Low</option>
-    <option>Medium</option>
-    <option>High</option>
-</select>
-
-<input id="detailContact" placeholder="Contact Person">
-
-<input id="detailPhone" placeholder="Phone">
-
-<input id="detailEmail" placeholder="Email">
-
-<input id="detailWebsite" placeholder="Website">
-
-<select id="detailQualification">
-    <option>Qualified</option>
-    <option>Conditionally Qualified</option>
-    <option>Rejected</option>
-</select>
-
-<select id="detailStatus">
-    <option>Approved</option>
-    <option>Pending</option>
-    <option>Review</option>
-</select>
-
-<textarea
-id="detailRemarks"
-class="full-width"
-rows="4"
-placeholder="Remarks">
-</textarea>
-
-</div>
-
-<hr style="margin:25px 0">
-
-<h3>Vendor Documents</h3>
-
-<label>📄 Company Profile (PDF)</label><br>
-<input type="file" id="companyProfile" accept=".pdf"><br><br>
-
-<label>📑 ISO Certificate (PDF)</label><br>
-<input type="file" id="isoCertificate" accept=".pdf"><br><br>
-
-<label>📜 Company Registration (PDF)</label><br>
-<input type="file" id="companyRegistration" accept=".pdf"><br><br>
-
-<button id="saveDocumentBtn" class="primary-btn">
-💾 Save Documents
-</button>
-
-<hr style="margin:25px 0">
-
-<button id="exportExcelBtn" class="primary-btn">
-📊 Export Vendor List
-</button>
-
-<input
-type="file"
-id="importVendorFile"
-accept=".csv"
-style="display:none">
-
-<button id="importExcelBtn" class="primary-btn">
-📥 Import Vendor List
-</button>
-
-<div id="documentStatus"></div>
-
-<div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
-
-<button id="saveVendorBtn" class="primary-btn">
-💾 Save
-</button>
-
-<button id="deleteVendorBtn" class="primary-btn"
-style="background:#ef4444;">
-🗑 Delete
-</button>
-
-<button id="resetVendorBtn" class="primary-btn"
-style="background:#6b7280;">
-↺ Reset
-</button>
-
-</div>
-
-</div>
 
 </section>
 

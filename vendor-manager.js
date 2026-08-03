@@ -844,3 +844,19 @@ function viewDocument(type){
 
     alert("Uploaded File : " + fileName);
 }
+function updateDashboard() {
+
+    const total = vendors.length;
+
+    const approved = vendors.filter(v => v.approval === "Approved").length;
+
+    const pending = vendors.filter(v => v.approval === "Pending").length;
+
+    const reviewed = approved;
+
+    document.getElementById("totalVendor").textContent = total;
+    document.getElementById("reviewVendor").textContent = reviewed;
+    document.getElementById("pendingVendor").textContent = pending;
+    document.getElementById("approvedVendor").textContent = approved;
+
+}

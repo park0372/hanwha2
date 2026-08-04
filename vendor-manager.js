@@ -919,57 +919,5 @@ if (viewRegistrationBtn) {
     });
 
 }
-function filterVendor() {
 
-    const keyword = document
-        .getElementById("vendorSearch")
-        .value
-        .toLowerCase()
-        .trim();
-
-    const category = document
-        .getElementById("categoryFilter")
-        .value;
-
-    const status = document
-        .getElementById("statusFilter")
-        .value;
-
-    const filtered = vendors.filter(v => {
-
-        const matchKeyword =
-            (v.name || "").toLowerCase().includes(keyword) ||
-            (v.category || "").toLowerCase().includes(keyword) ||
-            (v.location || "").toLowerCase().includes(keyword);
-
-        const matchCategory =
-            category === "" || v.category === category;
-
-        const matchStatus =
-            status === "" || v.approval === status;
-
-        return matchKeyword && matchCategory && matchStatus;
-
-    });
-
-    renderVendorTable(filtered);
-
-}
-const vendorSearch = document.getElementById("vendorSearch");
-
-if (vendorSearch) {
-    vendorSearch.addEventListener("input", filterVendor);
-}
-
-const categoryFilter = document.getElementById("categoryFilter");
-
-if (categoryFilter) {
-    categoryFilter.addEventListener("change", filterVendor);
-}
-
-const statusFilter = document.getElementById("statusFilter");
-
-if (statusFilter) {
-    statusFilter.addEventListener("change", filterVendor);
-}
 

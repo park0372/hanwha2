@@ -919,3 +919,31 @@ if (viewRegistrationBtn) {
     });
 
 }
+function filterVendor() {
+
+    const keyword = document
+        .getElementById("vendorSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const filtered = vendors.filter(v => {
+
+        return (
+            (v.name || "").toLowerCase().includes(keyword) ||
+            (v.category || "").toLowerCase().includes(keyword) ||
+            (v.location || "").toLowerCase().includes(keyword)
+        );
+
+    });
+
+    renderVendorTable(filtered);
+
+}
+const vendorSearch = document.getElementById("vendorSearch");
+
+if (vendorSearch) {
+
+    vendorSearch.addEventListener("input", filterVendor);
+
+}

@@ -850,7 +850,10 @@ function updateDashboard() {
 
     const pending = vendors.filter(v => v.approval === "Pending").length;
 
-    const reviewed = approved;
+    const reviewed = vendors.filter(v =>
+        v.approval === "Approved" ||
+        v.approval === "Rejected"
+    ).length;
 
     document.getElementById("totalVendor").textContent = total;
     document.getElementById("reviewVendor").textContent = reviewed;

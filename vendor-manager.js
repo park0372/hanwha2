@@ -989,3 +989,26 @@ if (viewCompanyProfileBtn) {
     });
 
 }
+const viewIsoBtn = document.getElementById("viewIsoBtn");
+
+if (viewIsoBtn) {
+
+    viewIsoBtn.addEventListener("click", function () {
+
+        viewDocument("isoCertificate");
+
+    });
+
+}
+
+const viewRegistrationBtn = document.getElementById("viewRegistrationBtn");
+
+if (viewRegistrationBtn) {
+
+    viewRegistrationBtn.addEventListener("click", function () {
+
+        viewDocument("companyRegistration");
+
+    });
+
+}

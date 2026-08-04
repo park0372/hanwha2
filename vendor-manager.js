@@ -961,3 +961,33 @@ document.getElementById("companyProfileFile").addEventListener("change", functio
 
     this.value = "";
 });
+function viewDocument(type) {
+
+    if (selectedVendorIndex === null) {
+        alert("먼저 Vendor를 선택하세요.");
+        return;
+    }
+
+    const docs = vendors[selectedVendorIndex].documents || {};
+
+    const fileName = docs[type];
+
+    if (!fileName) {
+        alert("업로드된 문서가 없습니다.");
+        return;
+    }
+
+    alert("Document : " + fileName);
+
+} 
+const viewCompanyProfileBtn = document.getElementById("viewCompanyProfileBtn");
+
+if (viewCompanyProfileBtn) {
+
+    viewCompanyProfileBtn.addEventListener("click", function () {
+
+        viewDocument("companyProfile");
+
+    });
+
+}

@@ -1343,3 +1343,48 @@ background:#E9ECFF;
 color:#4255FF;
 
 }
+.vendor-toolbar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.vendor-toolbar input{
+
+    flex:1;
+
+    min-width:260px;
+
+    padding:10px 12px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+}
+
+.vendor-toolbar select{
+
+    padding:10px 12px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    min-width:170px;
+
+}
+
+.vendor-toolbar .primary-btn{
+
+    margin-left:auto;
+
+}

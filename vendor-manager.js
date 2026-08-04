@@ -392,11 +392,16 @@ website: website,
     risk: "Low",
   
 
-    documents: {
+   documents:{
+    companyProfile: "",
+    isoCertificate: "",
+    companyRegistration: "",
+    uploadDate: {
         companyProfile: "",
         isoCertificate: "",
         companyRegistration: ""
-    },
+    }
+},
 
     lastUpdate: new Date().toLocaleDateString("ko-KR")
 });

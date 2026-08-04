@@ -936,3 +936,41 @@ document.getElementById("companyProfileFile").addEventListener("change", functio
 
     this.value = "";
 });
+document.getElementById("isoCertificateFile").addEventListener("change", function () {
+
+    if (selectedVendorIndex === null) {
+        alert("먼저 Vendor를 선택하세요.");
+        return;
+    }
+
+    const file = this.files[0];
+    if (!file) return;
+
+    vendors[selectedVendorIndex].documents.isoCertificate = file.name;
+
+    localStorage.setItem("vendors", JSON.stringify(vendors));
+
+    showVendorDetail(selectedVendorIndex);
+
+    this.value = "";
+
+});
+document.getElementById("companyRegistrationFile").addEventListener("change", function () {
+
+    if (selectedVendorIndex === null) {
+        alert("먼저 Vendor를 선택하세요.");
+        return;
+    }
+
+    const file = this.files[0];
+    if (!file) return;
+
+    vendors[selectedVendorIndex].documents.companyRegistration = file.name;
+
+    localStorage.setItem("vendors", JSON.stringify(vendors));
+
+    showVendorDetail(selectedVendorIndex);
+
+    this.value = "";
+
+});

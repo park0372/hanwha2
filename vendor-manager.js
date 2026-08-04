@@ -443,7 +443,11 @@ function editVendor(index){
     document.getElementById("vendorCategory").value = v.category;
     document.getElementById("vendorCity").value = v.location;
     document.getElementById("vendorContact").value = v.contact || "";
+document.getElementById("vendorPhone").value = v.phone || "";
 
+document.getElementById("vendorEmail").value = v.email || "";
+
+document.getElementById("vendorWebsite").value = v.website || "";
     document.getElementById("vendorStatus").value = v.approval;
 editIndex = index;
     modal.style.display = "flex";

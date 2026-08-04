@@ -479,9 +479,9 @@ editIndex = index;
 
 function applyFilters() {
 
-    const keyword = (document.getElementById("companySearch")?.value || "")
-        .trim()
-        .toLowerCase();
+const keyword = (document.getElementById("vendorSearch")?.value || "")
+    .trim()
+    .toLowerCase();
 
     const category = document.getElementById("filterCategory")?.value || "";
     const status = document.getElementById("filterStatus")?.value || "";
@@ -509,7 +509,11 @@ function applyFilters() {
     renderVendorTable(filtered);
 
 }
+const vendorSearch = document.getElementById("vendorSearch");
 
+if (vendorSearch) {
+    vendorSearch.addEventListener("input", applyFilters);
+}
 const categoryFilter = document.getElementById("filterCategory");
 const statusFilter = document.getElementById("filterStatus");
 

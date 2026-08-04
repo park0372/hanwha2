@@ -955,8 +955,6 @@ document.getElementById("companyProfileFile").addEventListener("change", functio
 
     localStorage.setItem("vendors", JSON.stringify(vendors));
 
-    alert("Company Profile uploaded.");
-
     showVendorDetail(selectedVendorIndex);
 
     this.value = "";

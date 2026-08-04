@@ -955,3 +955,20 @@ function filterVendor() {
     renderVendorTable(filtered);
 
 }
+const vendorSearch = document.getElementById("vendorSearch");
+
+if (vendorSearch) {
+    vendorSearch.addEventListener("input", filterVendor);
+}
+
+const categoryFilter = document.getElementById("categoryFilter");
+
+if (categoryFilter) {
+    categoryFilter.addEventListener("change", filterVendor);
+}
+
+const statusFilter = document.getElementById("statusFilter");
+
+if (statusFilter) {
+    statusFilter.addEventListener("change", filterVendor);
+}

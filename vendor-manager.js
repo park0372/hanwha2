@@ -214,15 +214,28 @@ if (docs.companyProfile) documentCount++;
 if (docs.isoCertificate) documentCount++;
 if (docs.companyRegistration) documentCount++;
     row.innerHTML=`
-        <td>${v.name}</td>
-        <td>${v.category}</td>
-        <td>${v.location}</td>
-        <td>${documentCount}/3</td>
-        <td>${v.approval}</td>
- 
-        <td>${v.lastUpdate || "-"}</td>
+       <td>${v.name}</td>
+
+<td>${v.category}</td>
+
+<td>${v.location}</td>
 
 <td>
+    <span class="doc-badge">
+        ${documentCount}/3
+    </span>
+</td>
+
+<td>
+    <span class="status ${v.approval.toLowerCase()}">
+        ${v.approval}
+    </span>
+</td>
+
+<td>${v.lastUpdate || "-"}</td>
+
+<td>
+
 <button class="view-btn"
 onclick="showVendorDetail(${index})">
 View

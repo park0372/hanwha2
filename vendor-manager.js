@@ -339,6 +339,9 @@ saveVendor.addEventListener("click", () => {
 
     const status = document.getElementById("vendorStatus").value;
     const contact = document.getElementById("vendorContact").value.trim();
+    const phone = document.getElementById("vendorPhone").value.trim();
+const email = document.getElementById("vendorEmail").value.trim();
+const website = document.getElementById("vendorWebsite").value.trim();
 
 if(company===""){
     alert("Company Name is required.");
@@ -353,6 +356,11 @@ if(editIndex >= 0){
         category: category,
         location: city,
           contact: contact,
+        phone: phone,
+
+email: email,
+
+website: website,
         approval: status,
         risk: "Low",
   
@@ -374,6 +382,11 @@ vendors.push({
     category: category,
     location: city,
     contact: contact,
+phone: phone,
+
+email: email,
+
+website: website,
 
     approval: status,
     risk: "Low",

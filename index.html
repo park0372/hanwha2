@@ -536,17 +536,4 @@ MEP
 </body>
 
 </html>
-const deleteVendorBtn = document.getElementById("deleteVendorBtn");
 
-if (deleteVendorBtn) {
-    deleteVendorBtn.addEventListener("click", function () {
-
-        if (selectedVendorIndex === null) {
-            alert("먼저 Vendor를 선택하세요.");
-            return;
-        }
-
-        deleteVendor(selectedVendorIndex);
-
-    });
-}

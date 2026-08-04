@@ -971,4 +971,5 @@ const statusFilter = document.getElementById("statusFilter");
 
 if (statusFilter) {
     statusFilter.addEventListener("change", filterVendor);
+}
 

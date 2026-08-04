@@ -550,17 +550,42 @@ const statusDiv = document.getElementById("documentStatus");
     (docs.isoCertificate ? 1 : 0) +
     (docs.companyRegistration ? 1 : 0);
         statusDiv.innerHTML = `
-            <h4>Document Status (${uploadedCount}/3)</h4>
+<h4>📂 Documents (${uploadedCount}/3)</h4>
 
-            <p>📄 Company Profile :
-            ${docs.companyProfile ? "✅ " + docs.companyProfile : "❌ Not Uploaded"}</p>
+    <table style="width:100%; border-collapse:collapse;">
 
-            <p>📑 ISO Certificate :
-            ${docs.isoCertificate ? "✅ " + docs.isoCertificate : "❌ Not Uploaded"}</p>
+        <tr>
+            <td>📄 Company Profile</td>
+            <td>${docs.companyProfile ? "✅ " + docs.companyProfile : "❌ Not Uploaded"}</td>
+            <td>
+                <button onclick="viewDocument('companyProfile')">
+                    View
+                </button>
+            </td>
+        </tr>
 
-            <p>📜 Company Registration :
-            ${docs.companyRegistration ? "✅ " + docs.companyRegistration : "❌ Not Uploaded"}</p>
-        `;
+        <tr>
+            <td>📑 ISO Certificate</td>
+            <td>${docs.isoCertificate ? "✅ " + docs.isoCertificate : "❌ Not Uploaded"}</td>
+            <td>
+                <button onclick="viewDocument('isoCertificate')">
+                    View
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>📜 Company Registration</td>
+            <td>${docs.companyRegistration ? "✅ " + docs.companyRegistration : "❌ Not Uploaded"}</td>
+            <td>
+                <button onclick="viewDocument('companyRegistration')">
+                    View
+                </button>
+            </td>
+        </tr>
+
+    </table>
+`;
     }
 }
 document.getElementById("saveVendorBtn").addEventListener("click", saveVendorDetail);

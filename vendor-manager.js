@@ -823,85 +823,7 @@ const importVendorFile = document.getElementById("importVendorFile");
 if (importVendorFile) {
     importVendorFile.addEventListener("change", importVendorCSV);
 }
-// ============================================
-// CSV Import
-// ============================================
 
-function importVendorCSV(event) {
-
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-
-        const csv = e.target.result;
-
-        const lines = csv.split(/\r?\n/);
-
-        if (lines.length < 2) {
-            alert("CSV file is empty.");
-            return;
-        }
-
-        // 첫 줄(Header)은 제외
-        for (let i = 1; i < lines.length; i++) {
-
-            if (lines[i].trim() === "") continue;
-
-            const cols = lines[i]
-                .split(",")
-                .map(v => v.replace(/^"|"$/g, "").trim());
-
-            vendors.push({
-
-                id: "V" + Date.now() + "_" + i,
-
-                name: cols[0] || "",
-
-                category: cols[1] || "",
-
-                location: cols[2] || "",
-
-                contact: cols[3] || "",
-
-                phone: cols[4] || "",
-
-                email: cols[5] || "",
-
-                website: cols[6] || "",
-
-                approval: cols[7] || "Pending",
-
-                lastUpdate: cols[8] || new Date().toISOString().split("T")[0]
-
-            });
-
-        }
-
-        localStorage.setItem("vendors", JSON.stringify(vendors));
-
-        renderVendorTable(vendors);
-
-        if (typeof updateVendorKPI === "function")
-            updateVendorKPI();
-
-        if (typeof updateSurveyChart === "function")
-            updateSurveyChart();
-
-        if (typeof updateCategoryChart === "function")
-            updateCategoryChart();
-
-        alert("Vendor List Imported Successfully.");
-
-        document.getElementById("importVendorFile").value = "";
-
-    };
-
-    reader.readAsText(file);
-
-}
 function viewDocument(type){
 
     if(selectedVendorIndex === null){
@@ -959,25 +881,7 @@ document.getElementById("companyProfileFile").addEventListener("change", functio
 
     this.value = "";
 });
-function viewDocument(type) {
 
-    if (selectedVendorIndex === null) {
-        alert("먼저 Vendor를 선택하세요.");
-        return;
-    }
-
-    const docs = vendors[selectedVendorIndex].documents || {};
-
-    const fileName = docs[type];
-
-    if (!fileName) {
-        alert("업로드된 문서가 없습니다.");
-        return;
-    }
-
-    alert("Document : " + fileName);
-
-} 
 const viewCompanyProfileBtn = document.getElementById("viewCompanyProfileBtn");
 
 if (viewCompanyProfileBtn) {

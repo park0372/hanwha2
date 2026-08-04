@@ -403,7 +403,17 @@ MEP
 
         <input type="file"
                id="companyProfileFile">
+<button
+        type="button"
+        id="viewCompanyProfileBtn">
+        View
+    </button>
 
+    <button
+        type="button"
+        id="removeCompanyProfileBtn">
+        Remove
+    </button>
     </div>
 
     <div class="document-row">
@@ -445,43 +455,7 @@ MEP
             </div>
 
         </div>
-<hr>
 
-<h4>Document Upload</h4>
-
-<div class="document-upload">
-
-   <label>Company Profile</label><br>
-
-<input type="file" id="companyProfileFile" hidden>
-
-<button type="button"
-onclick="document.getElementById('companyProfileFile').click()">
-    Upload
-</button>
-
-<button type="button"
-onclick="viewDocument('companyProfile')">
-    View
-</button>
-
-<span id="companyProfileName">No File</span>
-
-<br><br>
-
-    <label>ISO Certificate</label><br>
-    <input type="file" id="isoCertificateFile"><br><br>
-
-    <label>Company Registration</label><br>
-    <input type="file" id="companyRegistrationFile"><br><br>
-
-    <button id="saveDocumentBtn" class="primary-btn">
-        Save Documents
-    </button>
-
-</div>
-
-<div id="documentStatus"></div>
     </div>
 
 </section>

@@ -154,29 +154,6 @@ function updateSurveyChart() {
 
 }
 
-/* ===========================
-   Search
-=========================== */
-
-const search=document.getElementById("companySearch");
-
-search.addEventListener("keyup",function(){
-
-const keyword=this.value.toLowerCase();
-
-const rows=document.querySelectorAll("#companyTable tbody tr");
-
-rows.forEach(row=>{
-
-const text=row.innerText.toLowerCase();
-
-row.style.display=text.includes(keyword)
-?""
-:"none";
-
-});
-
-});
 
 
 /* ===========================

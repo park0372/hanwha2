@@ -434,6 +434,22 @@ renderVendorTable(vendors);
 // LocalStorage 저장
 localStorage.setItem("vendors", JSON.stringify(vendors));
 
+selectedVendorIndex = null;
+
+updateDashboard();
+
+if (typeof updateVendorKPI === "function") {
+    updateVendorKPI();
+}
+
+if (typeof updateSurveyChart === "function") {
+    updateSurveyChart();
+}
+
+if (typeof updateCategoryChart === "function") {
+    updateCategoryChart();
+}
+
 }
 function editVendor(index){
 

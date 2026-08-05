@@ -194,14 +194,26 @@ function updateRecentCompanies() {
    Dashboard Search
 =========================== */
 
-const topSearch=document.getElementById("searchBox");
+const topSearch = document.getElementById("searchBox");
 
-topSearch.addEventListener("keyup",()=>{
+topSearch.addEventListener("keyup", () => {
 
-console.log("Searching :",topSearch.value);
+    const keyword = topSearch.value.toLowerCase().trim();
+
+    const filtered = vendors.filter(v => {
+
+        return (
+            (v.name || "").toLowerCase().includes(keyword) ||
+            (v.category || "").toLowerCase().includes(keyword) ||
+            (v.city || "").toLowerCase().includes(keyword) ||
+            (v.status || "").toLowerCase().includes(keyword)
+        );
+
+    });
+
+    renderVendorTable(filtered);
 
 });
-
 
 console.log("IVIP V1.1 Loaded Successfully");
 

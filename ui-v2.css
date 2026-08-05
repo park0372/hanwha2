@@ -780,3 +780,71 @@ header{
     gap:12px;
 
 }
+/* ===========================
+   SEARCH BOX
+=========================== */
+
+#vendorSearch{
+
+    width:320px;
+
+    height:46px;
+
+    padding:0 18px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    font-size:14px;
+
+    transition:.25s;
+
+}
+
+#vendorSearch:focus{
+
+    outline:none;
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+
+/* ===========================
+   ADD VENDOR BUTTON
+=========================== */
+
+#addVendorBtn{
+
+    height:46px;
+
+    padding:0 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    color:#fff;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#addVendorBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.35);
+
+}

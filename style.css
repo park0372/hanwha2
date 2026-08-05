@@ -1,3 +1,38 @@
+/* ===================================================
+   IVIP DESIGN SYSTEM V2
+=================================================== */
+
+:root{
+
+    /* Background */
+    --bg: #F5F7FB;
+
+    /* Surface */
+    --surface: #FFFFFF;
+
+    /* Primary */
+    --primary: #2563EB;
+
+    /* Text */
+    --text: #111827;
+    --text-light: #6B7280;
+
+    /* Border */
+    --border: #E5E7EB;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    /* Shadow */
+    --shadow-sm: 0 2px 8px rgba(15,23,42,.05);
+    --shadow-md: 0 8px 24px rgba(15,23,42,.08);
+
+    /* Transition */
+    --transition: .25s ease;
+
+}
 /* ==========================================================
    Iraq Vendor Intelligence Platform (IVIP)
    Version 2.0
@@ -36,13 +71,21 @@
 
 body{
 
-    font-family:'Inter',sans-serif;
+    margin:0;
+    padding:0;
 
     background:var(--bg);
 
     color:var(--text);
 
-    display:flex;
+    font-family:
+        "Inter",
+        "Segoe UI",
+        sans-serif;
+
+    font-size:14px;
+
+    line-height:1.5;
 
 }
 

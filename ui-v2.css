@@ -567,3 +567,62 @@ header{
     font-weight:500;
 
 }
+/* ===== LOGO V3 ===== */
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:35px;
+
+}
+
+.logo-icon{
+
+    width:52px;
+    height:52px;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    box-shadow:0 12px 25px rgba(37,99,235,.35);
+
+}
+
+.logo-icon svg{
+
+    width:26px;
+    height:26px;
+
+}
+
+.logo-text h2{
+
+    margin:0;
+
+    font-size:24px;
+
+    color:white;
+
+}
+
+.logo-text p{
+
+    margin:3px 0 0;
+
+    color:#94A3B8;
+
+    font-size:12px;
+
+    letter-spacing:.5px;
+
+}

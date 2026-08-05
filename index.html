@@ -298,57 +298,43 @@ MEP
 
                 <h3>Vendor Database</h3>
 
-              <div class="vendor-toolbar">
+ <div class="vendor-toolbar">
 
     <input
         type="text"
         id="vendorSearch"
-        placeholder="Search Company / Category / City..."
+        placeholder="🔍 Search company..."
     >
-        <button id="addVendorBtn">+ Add Vendor</button>
 
-    </div>
-
-</div>
     <select id="categoryFilter">
-        <option value="">All Categories</option>
-        <option value="Electrical">Electrical</option>
-        <option value="Mechanical">Mechanical</option>
-        <option value="Civil">Civil</option>
-        <option value="Material">Material</option>
-        <option value="Housing">Housing</option>
+
+        <option value="">All Category</option>
+
+        <option>Civil</option>
+        <option>Electrical</option>
+        <option>Mechanical</option>
+        <option>Material</option>
+        <option>Housing</option>
+
     </select>
 
     <select id="statusFilter">
+
         <option value="">All Status</option>
-        <option value="Approved">Approved</option>
-        <option value="Pending">Pending</option>
-        <option value="Rejected">Rejected</option>
+
+        <option>Approved</option>
+        <option>Pending</option>
+        <option>Review</option>
+
     </select>
 
-<button id="addVendorBtn" class="primary-btn">
-    + Add Vendor
-</button>
+    <button id="addVendorBtn" class="primary-btn">
 
-                    <select id="filterCategory">
-                        <option value="">All Category</option>
-                        <option>Civil</option>
-                        <option>Electrical</option>
-                        <option>Mechanical</option>
-                        <option>Material</option>
-                        <option>Housing</option>
-                    </select>
-<select id="filterStatus">
-                        <option value="">All Status</option>
-                        <option>Approved</option>
-                        <option>Pending</option>
-                        <option>Review</option>
-                    </select>
+        + Add Vendor
 
+    </button>
 
-                </div>
-
-            </div>
+</div>
 
             <table class="vendor-table">
 

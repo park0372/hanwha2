@@ -153,7 +153,41 @@ function updateSurveyChart() {
    surveyChart.update();
 
 }
+/* ===========================
+   Recent Companies Update
+=========================== */
 
+function updateRecentCompanies() {
+
+    if (typeof vendors === "undefined") return;
+
+    const recentBox = document.getElementById("recentCompanies");
+
+    if (!recentBox) return;
+
+    recentBox.innerHTML = "";
+
+    vendors
+        .slice()
+        .reverse()
+        .slice(0, 6)
+        .forEach(v => {
+
+            const card = document.createElement("div");
+
+            card.className = "recent-card";
+
+            card.innerHTML = `
+                <h4>${v.name}</h4>
+                <p>${v.category}</p>
+                <span>${v.city}</span>
+            `;
+
+            recentBox.appendChild(card);
+
+        });
+
+}
 
 
 /* ===========================
@@ -196,6 +230,7 @@ function updateVendorKPI(){
 }
 updateVendorKPI();
 updateSurveyChart();
+updateRecentCompanies();
 
 
 

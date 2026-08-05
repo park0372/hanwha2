@@ -288,6 +288,9 @@ document.addEventListener("DOMContentLoaded", function () {
 if (typeof updateCategoryChart === "function") {
     updateCategoryChart();
 }
+    if (typeof updateRecentCompanies === "function") {
+    updateRecentCompanies();
+}
 });
 /* ==========================================
    Vendor Modal
@@ -410,7 +413,13 @@ website: website,
 
 renderVendorTable(vendors);
 updateVendorKPI();
+if (typeof updateSurveyChart === "function") {
+    updateSurveyChart();
+}
 
+if (typeof updateRecentCompanies === "function") {
+    updateRecentCompanies();
+}
 // LocalStorage 저장
     console.log("Before Save", vendors);
 localStorage.setItem("vendors", JSON.stringify(vendors));
@@ -454,7 +463,9 @@ if (typeof updateSurveyChart === "function") {
 if (typeof updateCategoryChart === "function") {
     updateCategoryChart();
 }
-
+if (typeof updateRecentCompanies === "function") {
+    updateRecentCompanies();
+}
 }
 function editVendor(index){
 
@@ -644,7 +655,9 @@ if (typeof updateSurveyChart === "function") {
 if (typeof updateCategoryChart === "function") {
     updateCategoryChart();
 }
-
+if (typeof updateRecentCompanies === "function") {
+    updateRecentCompanies();
+}
     // 테이블 다시 그리기
     renderVendorTable(vendors);
 

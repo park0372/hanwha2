@@ -1,0 +1,163 @@
+/* =====================================================
+   IVIP UI V2
+   Modern SaaS Dashboard
+   Version : 2.0
+===================================================== */
+
+
+/* =====================================================
+   01. DESIGN SYSTEM
+===================================================== */
+
+:root{
+
+    /* Colors */
+    --bg:#F5F7FB;
+    --surface:#FFFFFF;
+
+    --primary:#2563EB;
+    --primary-light:#EAF2FF;
+
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --text:#111827;
+    --text-light:#6B7280;
+
+    --border:#E5E7EB;
+
+    /* Radius */
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:18px;
+
+    /* Shadow */
+    --shadow-sm:0 2px 8px rgba(0,0,0,.05);
+    --shadow-md:0 8px 24px rgba(15,23,42,.08);
+
+    /* Transition */
+    --transition:.25s ease;
+
+}
+
+
+/* =====================================================
+   02. GLOBAL
+===================================================== */
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:"Inter",sans-serif;
+
+}
+
+
+/* Smooth */
+
+*{
+
+    box-sizing:border-box;
+
+}
+
+
+/* Card Animation */
+
+.card{
+
+    transition:all .25s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =====================================================
+   END
+===================================================== */
+/* =====================================================
+   03. SIDEBAR
+===================================================== */
+
+.sidebar{
+
+    width:220px;
+
+    background:#0F172A;
+
+    border-right:1px solid rgba(255,255,255,.06);
+
+    transition:.3s;
+
+}
+
+.sidebar .logo{
+
+    padding:28px 20px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    color:#fff;
+
+}
+
+.sidebar ul{
+
+    padding:12px;
+
+}
+
+.sidebar li{
+
+    margin-bottom:6px;
+
+}
+
+.sidebar a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px 14px;
+
+    border-radius:12px;
+
+    color:#CBD5E1;
+
+    text-decoration:none;
+
+    transition:.2s;
+
+}
+
+.sidebar a:hover{
+
+    background:rgba(255,255,255,.06);
+
+    color:#fff;
+
+}
+
+.sidebar .active{
+
+    background:#2563EB;
+
+    color:#fff;
+
+}

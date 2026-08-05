@@ -255,3 +255,52 @@ body{
     color:#fff;
 
 }
+/* =====================================================
+   HEADER V2
+===================================================== */
+
+.header{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px 28px;
+
+    margin-bottom:22px;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.header h1{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin:0;
+
+    color:var(--text);
+
+}
+
+.header p{
+
+    margin-top:6px;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+.header small{
+
+    color:#94A3B8;
+
+    font-size:12px;
+
+}

@@ -894,6 +894,7 @@ if (url) {
 } else {
     alert("File not found.");
 }
+    }
 function updateDashboard() {
 
     const total = vendors.length;

@@ -293,11 +293,11 @@ if (vendorAddBtn) {
 
 /* Close */
 
-closeModal.addEventListener("click", () => {
-
-    modal.style.display = "none";
-
-});
+if (closeModal) {
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+}
 
 /* Close when clicking outside */
 

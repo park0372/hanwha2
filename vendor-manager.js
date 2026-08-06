@@ -348,7 +348,15 @@ if(company===""){
     alert("Company Name is required.");
     return;
 }
+const duplicate = vendors.find((v, i) =>
+    i !== editIndex &&
+    (v.name || "").trim().toLowerCase() === company.toLowerCase()
+);
 
+if (duplicate) {
+    alert("This company is already registered.");
+    return;
+}
 if(editIndex >= 0){
 
     vendors[editIndex] = {
@@ -697,9 +705,14 @@ if (typeof updateCategoryChart === "function") {
 if (typeof updateRecentCompanies === "function") {
     updateRecentCompanies();
 }
+    // 최근 수정순 정렬
+vendors.sort((a, b) => {
+    return new Date(b.lastUpdate) - new Date(a.lastUpdate);
+});
     // 테이블 다시 그리기
     renderVendorTable(vendors);
-
+// Detail 화면 갱신
+showVendorDetail(selectedVendorIndex);
     alert("Vendor 정보가 저장되었습니다.");
 }
 const saveDocBtn = document.getElementById("saveDocumentBtn");

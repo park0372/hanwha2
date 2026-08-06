@@ -601,6 +601,47 @@ const statusDiv = document.getElementById("documentStatus");
 `;
     }
 }
+const historyDiv = document.getElementById("documentHistory");
+
+if (historyDiv) {
+
+    const history = v.documentHistory || [];
+
+    if (history.length === 0) {
+
+        historyDiv.innerHTML = `
+            <h4>Document History</h4>
+            <p>No history.</p>
+        `;
+
+    } else {
+
+        historyDiv.innerHTML = `
+            <h4>Document History</h4>
+
+            <table class="history-table">
+
+                <tr>
+                    <th>Date</th>
+                    <th>Company Profile</th>
+                    <th>ISO</th>
+                    <th>Registration</th>
+                </tr>
+
+                ${history.map(h=>`
+                <tr>
+                    <td>${h.date}</td>
+                    <td>${h.companyProfile||"-"}</td>
+                    <td>${h.isoCertificate||"-"}</td>
+                    <td>${h.companyRegistration||"-"}</td>
+                </tr>
+                `).join("")}
+
+            </table>
+        `;
+    }
+
+}
 document.getElementById("saveVendorBtn").addEventListener("click", saveVendorDetail);
 function saveVendorDetail() {
 

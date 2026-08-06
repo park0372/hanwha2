@@ -759,7 +759,7 @@ if (typeof updateRecentCompanies === "function") {
     updateRecentCompanies();
     alert("Document Saved");
 }
-
+}
 // ============================================
 // Export Vendor List (CSV)
 // ============================================

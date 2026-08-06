@@ -1004,28 +1004,5 @@ if (viewRegistrationBtn) {
     });
 
 }
-const copyVendorIdBtn = document.getElementById("copyVendorIdBtn");
 
-if (copyVendorIdBtn) {
-
-    copyVendorIdBtn.addEventListener("click", async () => {
-
-        const vendorId =
-            document.getElementById("detailVendorId").value;
-
-        if (!vendorId) {
-            alert("No Vendor ID.");
-            return;
-        }
-
-        try {
-            await navigator.clipboard.writeText(vendorId);
-            alert("Vendor ID copied.");
-        } catch (err) {
-            alert("Copy failed.");
-        }
-
-    });
-
-}
 

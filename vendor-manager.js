@@ -461,17 +461,6 @@ localStorage.setItem("vendors", JSON.stringify(vendors));
 
 alert("Vendor deleted.");
 
-vendors.splice(index,1);
-
-renderVendorTable(vendors);
-
-// LocalStorage 저장
-localStorage.setItem("vendors", JSON.stringify(vendors));
-
-selectedVendorIndex = null;
-
-updateDashboard();
-
 if (typeof updateVendorKPI === "function") {
     updateVendorKPI();
 }

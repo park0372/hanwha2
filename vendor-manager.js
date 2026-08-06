@@ -765,19 +765,7 @@ renderVendorTable(vendors);
 updateRecentCompanies();
     alert("Document Saved");
 }
-// ==========================
-// Document History
-// ==========================
-if (!vendors[selectedVendorIndex].documentHistory) {
-    vendors[selectedVendorIndex].documentHistory = [];
-}
 
-vendors[selectedVendorIndex].documentHistory.push({
-    date: new Date().toISOString().split("T")[0],
-    companyProfile: companyProfile ? companyProfile.name : "",
-    isoCertificate: isoCertificate ? isoCertificate.name : "",
-    companyRegistration: companyRegistration ? companyRegistration.name : ""
-});
 // ============================================
 // Export Vendor List (CSV)
 // ============================================

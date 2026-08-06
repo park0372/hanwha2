@@ -443,9 +443,23 @@ alert("LocalStorage Saved!");
 
 function deleteVendor(index){
 
-    if(!confirm("Delete this vendor?")){
-        return;
-    }
+   const company = vendors[selectedVendorIndex].name;
+
+const company = vendors[selectedVendorIndex].name;
+
+if (!confirm(`Delete "${company}" ?`)) {
+    return;
+}
+
+vendors.splice(selectedVendorIndex, 1);
+
+selectedVendorIndex = null;
+
+renderVendorTable(vendors);
+
+localStorage.setItem("vendors", JSON.stringify(vendors));
+
+alert("Vendor deleted.");
 
 vendors.splice(index,1);
 

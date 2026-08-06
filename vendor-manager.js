@@ -275,7 +275,7 @@ if (typeof updateCategoryChart === "function") {
    Vendor Modal
 ========================================== */
 let editIndex = -1;
-const modal = document.getElementById("vendorModal");
+onst modal = document.getElementById("vendorModal");
 
 const vendorAddBtn = document.getElementById("addVendorBtn");
 
@@ -285,9 +285,11 @@ const saveVendor = document.getElementById("saveVendor");
 
 /* Open */
 
-vendorAddBtn.addEventListener("click", () => {
-    modal.style.display = "flex";
-});
+if (vendorAddBtn) {
+    vendorAddBtn.addEventListener("click", () => {
+        modal.style.display = "flex";
+    });
+}
 
 /* Close */
 
@@ -435,7 +437,7 @@ selectedVendorIndex = null;
 renderVendorTable(vendors);
 
 localStorage.setItem("vendors", JSON.stringify(vendors));
-
+updateDashboard();
 alert("Vendor deleted.");
 
 if (typeof updateVendorKPI === "function") {
@@ -877,6 +879,7 @@ function importVendorCSV(event) {
         localStorage.setItem("vendors", JSON.stringify(vendors));
 
         renderVendorTable(vendors);
+        updateDashboard();
         updateVendorKPI();
 
         if (typeof updateSurveyChart === "function")

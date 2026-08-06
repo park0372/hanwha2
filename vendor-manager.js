@@ -686,6 +686,8 @@ function saveDocuments() {
     if (companyProfile) {
         vendors[selectedVendorIndex].documents.companyProfile =
             companyProfile.name;
+        vendors[selectedVendorIndex].documents.companyProfileURL =
+    URL.createObjectURL(companyProfile);
 
         document.getElementById("companyProfileName").textContent =
             companyProfile.name;
@@ -697,7 +699,8 @@ const isoCertificate =
 if (isoCertificate) {
     vendors[selectedVendorIndex].documents.isoCertificate =
         isoCertificate.name;
-
+vendors[selectedVendorIndex].documents.isoCertificateURL =
+    URL.createObjectURL(isoCertificate);
     document.getElementById("isoCertificateName").textContent =
         isoCertificate.name;
 }
@@ -709,7 +712,8 @@ const companyRegistration =
 if (companyRegistration) {
     vendors[selectedVendorIndex].documents.companyRegistration =
         companyRegistration.name;
-
+vendors[selectedVendorIndex].documents.companyRegistrationURL =
+    URL.createObjectURL(companyRegistration);
     document.getElementById("companyRegistrationName").textContent =
         companyRegistration.name;
 }
@@ -883,7 +887,12 @@ function viewDocument(type){
         return;
     }
 
-    alert("Uploaded File : " + fileName);
+    const url = docs[type + "URL"];
+
+if (url) {
+    window.open(url, "_blank");
+} else {
+    alert("File not found.");
 }
 function updateDashboard() {
 

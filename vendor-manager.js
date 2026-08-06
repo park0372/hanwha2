@@ -23,7 +23,7 @@ let vendors = savedVendors
     email: "info@abcelec.iq",
     website: "www.abcelec.iq",
         approval: "Approved",
-        risk: "Low",
+        
 
         lastUpdate: "2026-07-26"
     },
@@ -118,23 +118,6 @@ function filterCategory(category) {
 
 
 
-// ============================================
-// Risk Filter
-// ============================================
-
-function filterRisk(level) {
-
-    if(level === "ALL") {
-        return vendors;
-    }
-
-
-    return vendors.filter(v =>
-        v.risk === level
-    );
-
-}
-
 
 
 // ============================================
@@ -180,10 +163,6 @@ function vendorKPI() {
             ).length,
 
 
-        highRisk:
-            vendors.filter(
-                v => v.risk === "High"
-            ).length
 
     };
 
@@ -371,7 +350,7 @@ email: email,
 
 website: website,
         approval: status,
-        risk: "Low",
+        
   
             documents: vendors[editIndex].documents || {
         companyProfile: "",
@@ -398,7 +377,7 @@ email: email,
 website: website,
 
     approval: status,
-    risk: "Low",
+    
   
 
    documents:{
@@ -443,9 +422,7 @@ alert("LocalStorage Saved!");
 
 function deleteVendor(index){
 
-   const company = vendors[selectedVendorIndex].name;
-
-const company = vendors[selectedVendorIndex].name;
+    const company = vendors[index].name;
 
 if (!confirm(`Delete "${company}" ?`)) {
     return;
@@ -778,7 +755,8 @@ vendors[selectedVendorIndex].lastUpdate =
     localStorage.setItem("vendors", JSON.stringify(vendors));
 renderVendorTable(vendors);
 
-updateRecentCompanies();
+if (typeof updateRecentCompanies === "function") {
+    updateRecentCompanies();
     alert("Document Saved");
 }
 
@@ -898,7 +876,7 @@ function importVendorCSV(event) {
 
         localStorage.setItem("vendors", JSON.stringify(vendors));
 
-        renderVendorTable();
+        renderVendorTable(vendors);
         updateVendorKPI();
 
         if (typeof updateSurveyChart === "function")

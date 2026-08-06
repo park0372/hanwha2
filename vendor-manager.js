@@ -298,7 +298,7 @@ if (typeof updateCategoryChart === "function") {
 let editIndex = -1;
 const modal = document.getElementById("vendorModal");
 
-const addVendorBtn = document.getElementById("addVendorBtn");
+const vendorAddBtn = document.getElementById("addVendorBtn");
 
 const closeModal = document.getElementById("closeModal");
 
@@ -306,10 +306,8 @@ const saveVendor = document.getElementById("saveVendor");
 
 /* Open */
 
-addVendorBtn.addEventListener("click", () => {
-
+vendorAddBtn.addEventListener("click", () => {
     modal.style.display = "flex";
-
 });
 
 /* Close */

@@ -243,7 +243,49 @@ function updateVendorKPI(){
 updateVendorKPI();
 updateSurveyChart();
 updateRecentCompanies();
+/* ===========================
+   STEP 10-1 : Add Vendor
+=========================== */
 
+const addVendorBtn = document.getElementById("addVendorBtn");
+
+if (addVendorBtn) {
+    addVendorBtn.addEventListener("click", addVendor);
+}
+
+function addVendor() {
+
+    const company = document.getElementById("vendorCompany").value.trim();
+    const category = document.getElementById("vendorCategory").value;
+    const city = document.getElementById("vendorCity").value.trim();
+
+    if (company === "") {
+        alert("Please enter Company Name.");
+        return;
+    }
+
+    const vendor = {
+        name: company,
+        category: category,
+        city: city,
+        approval: "Survey"
+    };
+
+    vendors.push(vendor);
+
+    localStorage.setItem("vendors", JSON.stringify(vendors));
+
+    renderVendorTable(vendors);
+    updateVendorKPI();
+    updateSurveyChart();
+    updateRecentCompanies();
+
+    document.getElementById("vendorCompany").value = "";
+    document.getElementById("vendorCategory").selectedIndex = 0;
+    document.getElementById("vendorCity").value = "";
+
+    alert("Vendor added successfully.");
+}
 
 
 

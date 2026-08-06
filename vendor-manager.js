@@ -690,10 +690,36 @@ function saveDocuments() {
         document.getElementById("companyProfileName").textContent =
             companyProfile.name;
     }
+    // ISO Certificate
+const isoCertificate =
+    document.getElementById("isoCertificateFile").files[0];
 
+if (isoCertificate) {
+    vendors[selectedVendorIndex].documents.isoCertificate =
+        isoCertificate.name;
+
+    document.getElementById("isoCertificateName").textContent =
+        isoCertificate.name;
+}
+
+// Company Registration
+const companyRegistration =
+    document.getElementById("companyRegistrationFile").files[0];
+
+if (companyRegistration) {
+    vendors[selectedVendorIndex].documents.companyRegistration =
+        companyRegistration.name;
+
+    document.getElementById("companyRegistrationName").textContent =
+        companyRegistration.name;
+}
+vendors[selectedVendorIndex].lastUpdate =
+    new Date().toISOString().split("T")[0];
     // LocalStorage 저장
     localStorage.setItem("vendors", JSON.stringify(vendors));
+renderVendorTable(vendors);
 
+updateRecentCompanies();
     alert("Document Saved");
 }
 // ============================================

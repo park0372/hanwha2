@@ -921,11 +921,6 @@ if (importBtn && importVendorFile) {
         importVendorFile.click();
     });
 }
-const importVendorFile = document.getElementById("importVendorFile");
-
-if (importVendorFile) {
-    importVendorFile.addEventListener("change", importVendorCSV);
-}
 
 function viewDocument(type){
 
